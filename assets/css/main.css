@@ -905,9 +905,6 @@
 .fa-angle-up:before {
   content: ""; }
 
-.fa-angle-down:before {
-  content: ""; }
-
 .fa-desktop:before {
   content: ""; }
 
@@ -13497,8 +13494,7 @@ a:focus {
 .r-latest-news-list {
   padding-bottom: 50px;
   border-bottom: 2px solid #444443;
-  margin-bottom: 60px; }
-
+}
 .r-latest-news-content {
   padding-top: 40px; }
   .r-latest-news-content .r-date {
