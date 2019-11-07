@@ -39,7 +39,7 @@
   
           <li class="list-nav-item">
   
-              <a href="./projects/all.html" class="list-nav-link">
+              <a href="file:///C:/Users/admin/Desktop/projet%20javascript/rentCar/dist/projects/all.html" class="list-nav-link">
                 <span class="list-nav-icon">
                   <i class="material-icons">home</i>
                 </span>
@@ -62,7 +62,7 @@
               <ul class="list-nav-child">
   
                   <li class="list-nav-item list-nav-child-item">
-                    <a href="search.html" class="list-nav-link">
+                    <a href="file:///C:/Users/admin/Desktop/projet%20javascript/rentCar/dist/pages/search.html" class="list-nav-link">
                       <span class="list-nav-icon list-nav-icon-sm">
                         <i class="material-icons">keyboard_arrow_right</i>
                       </span>
@@ -71,13 +71,14 @@
                   </li>
   
                   <li class="list-nav-item list-nav-child-item">
-                    <a href="addCars.html" class="list-nav-link">
+                    <a href="file:///C:/Users/admin/Desktop/projet%20javascript/rentCar/dist/pages/addCars.html" class="list-nav-link">
                       <span class="list-nav-icon list-nav-icon-sm">
                         <i class="material-icons">keyboard_arrow_right</i>
                       </span>
                       <span class="list-nav-label">Add Cars</span>
                     </a>
                   </li>
+                  
   
               </ul>
   
@@ -85,7 +86,7 @@
   
           <li class="list-nav-item">
   
-              <a href="./tables/basic.html" class="list-nav-link">
+              <a href="file:///C:/Users/admin/Desktop/projet%20javascript/rentCar/dist/tables/basic.html" class="list-nav-link">
                 <span class="list-nav-icon">
                   <i class="material-icons">widgets</i>
                 </span>
@@ -93,7 +94,7 @@
               </a>
           </li>
           <li class="list-nav-item">
-              <a href="./pages/account.html" class="list-nav-link">
+              <a href="file:///C:/Users/admin/Desktop/projet%20javascript/rentCar/dist/pages/account.html" class="list-nav-link">
                 <span class="list-nav-icon">
                   <i class="material-icons">person</i>
                 </span>
@@ -700,7 +701,21 @@
                             <option value="GRAND KANGOO">GRAND KANGOO</option>
                             <option value="GRAND MODUS">GRAND MODUS</option>
                             <option value="GRAND SCENIC">GRAND SCENIC</option>
-                            <option value="KADJAR">KADJAR</option><option value="KANGOO">KANGOO</option><option value="KANGOO EXPRESS">KANGOO EXPRESS</option><option value="KOLEOS">KOLEOS</option><option value="LAGUNA">LAGUNA</option><option value="LATITUDE">LATITUDE</option><option value="MASCOTT">MASCOTT</option><option value="MASTER">MASTER</option><option value="MAXITY">MAXITY</option><option value="MEGANE">MEGANE</option><option value="MIDLUM">MIDLUM</option><option value="MODUS">MODUS</option><option value="R11">R11</option><option value="R18">R18</option><option value="R19">R19</option><option value="R20">R20</option><option value="R21">R21</option><option value="R25">R25</option><option value="R30">R30</option><option value="R4">R4</option><option value="R5">R5</option><option value="R9">R9</option><option value="RAMBLER">RAMBLER</option><option value="RODEO">RODEO</option><option value="SAFRANE">SAFRANE</option><option value="SCENIC">SCENIC</option><option value="SPIDER">SPIDER</option><option value="SUPER 5">SUPER 5</option><option value="TALISMAN">TALISMAN</option><option value="TRAFIC">TRAFIC</option><option value="TWINGO">TWINGO</option><option value="TWIZY">TWIZY</option><option value="VEL SATIS">VEL SATIS</option><option value="WIND">WIND</option><option value="WRANGLER">WRANGLER</option><option value="ZOE">ZOE</option>
+                            <option value="KADJAR">KADJAR</option><option value="KANGOO">KANGOO</option>
+                            <option value="KANGOO EXPRESS">KANGOO EXPRESS</option>
+                            <option value="KOLEOS">KOLEOS</option><option value="LAGUNA">LAGUNA</option>
+                            <option value="LATITUDE">LATITUDE</option>
+                            <option value="MASCOTT">MASCOTT</option><option value="MASTER">MASTER</option>
+                            <option value="MAXITY">MAXITY</option><option value="MEGANE">MEGANE</option>
+                            <option value="MIDLUM">MIDLUM</option><option value="MODUS">MODUS</option>
+                            <option value="R11">R11</option><option value="R18">R18</option><option value="R19">R19</option>
+                            <option value="R20">R20</option><option value="R21">R21</option><option value="R25">R25</option>
+                            <option value="R30">R30</option><option value="R4">R4</option><option value="R5">R5</option>
+                            <option value="R9">R9</option><option value="RAMBLER">RAMBLER</option><option value="RODEO">RODEO</option>
+                            <option value="SAFRANE">SAFRANE</option><option value="SCENIC">SCENIC</option><option value="SPIDER">SPIDER</option>
+                            <option value="SUPER 5">SUPER 5</option><option value="TALISMAN">TALISMAN</option><option value="TRAFIC">TRAFIC</option>
+                            <option value="TWINGO">TWINGO</option><option value="TWIZY">TWIZY</option><option value="VEL SATIS">VEL SATIS</option>
+                            <option value="WIND">WIND</option><option value="WRANGLER">WRANGLER</option><option value="ZOE">ZOE</option>
                           </select>
                       </div>
                       <div class="form-group mb-6">
@@ -799,6 +814,7 @@
                         </div>
                     </form>
                   </div>
+
                   <div class="py-6 px-8 pr-10 border-left border-top">
                       <h5 class="font-weight-bold text-secondary mb-6">Bio</h5>
                       <div class="form-group mb-6">
