@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="../vendor/css/font-awesome.min.css">
   <link rel="stylesheet" href="../vendor/perfect-scrollbar.css">
   
+<link rel="stylesheet" href="../vendor/c3.min.css">
+
   <link rel="stylesheet" href="../css/simplify.min.css">
   <title>Simplify Admin</title>
 </head>
@@ -910,7 +912,7 @@
         </button>
 
         <div class="navbar-text ml-3 d-none d-sm-block">
-          <h5 class="m-0 text-dark"> Plotly.js </h5>
+          <h5 class="m-0 text-dark"> Home </h5>
         </div>
 
         <div class="ml-auto d-sm-flex">
@@ -1117,137 +1119,317 @@
     </div>
     <div class="page-content">
       
+<button class="btn btn-success btn-fab fixed-bottom-right" title="New Task"><i class="material-icons">chat_bubble_outline</i></button>
+
 <div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <h4 class="section-title" style="font-weight:300">
+        Welcome Captain! You have <a class="text-warning">75</a> new Notifications
+      </h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-lg-4">
+      <div class="card">
+        <div class="card-header pb-2">
+          <h5>
+            Your Day
+          </h5>
+          <p class="text-secondary">
+            Get Started, You have a lot to do today!
+          </p>
+        </div>
+        <div class="card-body">
+          <ul class="list-group list-group-borderless list-group-sm">
+            <li class="list-group-item pl-0 py-2 text-secondary" style="">
+              <span class="text-secondary">
+                <i class="material-icons mr-1">event</i>
+                <span class="time mr-2">08:00</span>
+              </span>
+              <span class="" style="">Bridge Meeting</span>
+              <span class="ml-2"><i class="material-icons text-success">check</i></span>
+            </li>
+            <li class="list-group-item pl-0 py-2" style="">
+              <span class=" text-warning">
+                <i class="material-icons mr-1">mail_outline</i>
+                <span class="time mr-2">09:00</span>
+              </span>
+              <span class="" style="">Shipwide Broadcast</span>
+            </li>
+            <li class="list-group-item pl-0 py-2 " style="">
+              <span class="text">
+                <i class="material-icons mr-1">mail_outline</i>
+                <span class="time mr-2">13:00</span>
+              </span>
+              <span class="" style="">Technical Report</span>
+            </li>
+            <li class="list-group-item pl-0 py-2" style="">
+              <span class="text">
+                <i class="material-icons mr-1">event</i>
+                <span class="time mr-2">17:00</span>
+              </span>
+              <span class="" style="">Meeting with <a class="text-info">Enginnering</a></span>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-lg-4">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-feature float-right">
+            <div class="media-box bg-primary text-white">
+              <i class="material-icons">file_download</i>
+            </div>
+          </div>
+          <h5 class="card-title">
+            Engine Performance
+          </h5>
+          <h3 style="font-weight:300">200,000</h3>
+          <p class="text-secondary  mb-2">
+            Total Fusion cycles per Minute
+          </p>
+
+          <div class="chart-container" style="width: 100%; height: 8.5rem">
+            <canvas id="line-1" width="400" height="120"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-lg-4">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-feature float-right">
+            <div class="media-box bg-success text-white">
+              <i class="material-icons">attach_money</i>
+            </div>
+          </div>
+          <h5 class="card-title">
+            Mission Budget
+          </h5>
+          <h3 style="font-weight:300">$11,000,000</h3>
+          <p class="text-secondary  mb-2">
+            Total Budget Left for this Mission
+          </p>
+          <div class="chart-container" style="width: 100%; height: 8.5rem">
+            <canvas id="line-2"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-lg-4">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-feature float-right">
+            <div class="media-box media-box-sm bg-info text-white">
+              <i class="material-icons">bookmark</i>
+            </div>
+          </div>
+          <div class="card-feature float-right">
+          </div>
+          <h5 class="card-title">
+            Andromeda Galaxy
+          </h5>
+          <p class="text-secondary mb-4"  style="">
+            Progress Report
+          </p>
+          <h6 class="mb-2 text-secondary">
+            Exploration
+          </h6>
+          <div class="mb-4" style="">
+            <div class="progress progress-thin" style="height:4px">
+              <div class="progress-bar" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+          <div class="py-1">
+            <h6 class="mb-2 text-secondary">
+              Contact with Civilizations
+            </h6>
+            <div class="mb-4" style="">
+              <div class="progress progress-thin" style="height:4px">
+
+                <div class="progress-bar bg-success" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h5 class="card-title">
+            New Science Officers!
+          </h5>
+          <p class="text-secondary">
+            Say Hello!
+          </p>
+        </div>
+        <div class="card-body py-0 px-0">
+          <div class="media align-items-center py-3 px-4" style="border-top: 1px solid #eee">
+            <img class="mr-3" src="http://via.placeholder.com/256x256" alt="Generic placeholder image" style="width:2.5rem; height: 2.5rem; border-radius:50%">
+            <div class="media-body d-flex align-items-center">
+              <h6 class="mb-0">Lianna Parker</h6>
+            </div>
+
+          </div>
+          <div class="media align-items-center py-3 px-4" style="border-top: 1px solid #eee">
+            <img class="mr-3" src="http://via.placeholder.com/256x256" alt="Generic placeholder image" style="width:2.5rem; height: 2.5rem; border-radius:50%">
+            <div class="media-body d-flex align-items-center">
+              <h6 class="mb-0">Joane Kirk</h6>
+            </div>
+
+          </div>
+          <div class="media align-items-center py-3 px-4" style="border-top: 1px solid #eee">
+            <img class="mr-3" src="http://via.placeholder.com/256x256" alt="Generic placeholder image" style="width:2.5rem; height: 2.5rem; border-radius:50%">
+            <div class="media-body d-flex align-items-center">
+              <h6 class="mb-0">Scotty Johnson</h6>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+    </div>
+    <div class="col-12 col-lg-8">
+      <div class="row">
+
+
+
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="card-feature float-right">
+            <div class="media-box bg-info text-white">
+              <i class="material-icons">trending_up</i>
+            </div>
+          </div>
+          <h5 class="card-title mb-3">
+            Warp Speeds
+          </h5>
+          <h5 style="font-weight:300" class="mb-3">
+            $19% Average Core Performance
+          </h5>
+          <p class="text-secondary ">
+            Speed during Warp (In Lightyears per Minute)
+          </p>
+          <div class="chart-container" style="width:100%; height:24rem">
+            <canvas id="bar-1"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
   <div class="row">
     <div class="col-12 col-lg-8">
       <div class="card">
         <div class="card-header">
-          <h5>Plotly.js</h5>
+          <h5 class="card-title">
+            My Tasks
+          </h5>
         </div>
-        <div class="card-body">
+        <div class="card-body px-0">
+          <div class="media align-items-center py-4 px-6" style="border-top: 1px solid #eee">
+            <label class="custom-control custom-checkbox m-0">
+              <input type="checkbox" class="custom-control-input">
+              <span class="custom-control-indicator custom-control-material"></span>
+            </label>
+            <div class="media-body pl-3 d-flex justify-content-between">
+              <p class="mb-0">Check Warp Speed Beam Capabilities</p>
+              <span class="text-sm text-warning ">Tomorrow</span>
+            </div>
+
+          </div>
+          <div class="media align-items-center py-4 px-6" style="border-top: 1px solid #eee">
+            <label class="custom-control custom-checkbox m-0">
+              <input type="checkbox" class="custom-control-input">
+              <span class="custom-control-indicator custom-control-material"></span>
+            </label>
+            <div class="media-body pl-3 d-flex justify-content-between">
+              <p class="mb-0">Repair Forward Defence Shield</p>
+              <span class="text-sm text-secondary ">12 Jan 2017</span>
+            </div>
+
+          </div>
+          <div class="media align-items-center py-4 px-6" style="border-top: 1px solid #eee">
+            <label class="custom-control custom-checkbox m-0">
+              <input type="checkbox" class="custom-control-input">
+              <span class="custom-control-indicator custom-control-material"></span>
+            </label>
+            <div class="media-body pl-3 d-flex justify-content-between">
+              <p class="mb-0">Restock Proton Torpedos</p>
+              <span class="text-sm text-warning ">1 Jan 2017</span>
+            </div>
+
+          </div>
+          <div class="media align-items-center py-4 px-6" style="border-top: 1px solid #eee">
+            <label class="custom-control custom-checkbox m-0">
+              <input type="checkbox" class="custom-control-input">
+              <span class="custom-control-indicator custom-control-material"></span>
+            </label>
+            <div class="media-body pl-3 d-flex justify-content-between">
+              <p class="mb-0">Restock Space Sickness Medicine</p>
+              <span class="text-sm text-secondary ">11 Jan 2017</span>
+            </div>
+
+          </div>
+          <div class="media align-items-center py-4 px-6" style="border-top: 1px solid #eee">
+            <label class="custom-control custom-checkbox m-0">
+              <input type="checkbox" class="custom-control-input">
+              <span class="custom-control-indicator custom-control-material"></span>
+            </label>
+            <div class="media-body pl-3 d-flex justify-content-between">
+              <p class="mb-0">Repair Forward Defence Shield</p>
+              <span class="text-sm text-secondary ">12 Jan 2017</span>
+            </div>
+
+          </div>
+          <div class="media align-items-center py-4 px-6" style="border-top: 1px solid #eee">
+            <label class="custom-control custom-checkbox m-0">
+              <input type="checkbox" class="custom-control-input">
+              <span class="custom-control-indicator custom-control-material"></span>
+            </label>
+            <div class="media-body pl-3 d-flex justify-content-between">
+              <p class="mb-0">Restock Proton Torpedos</p>
+              <span class="text-sm text-warning ">1 Jan 2017</span>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+
+    </div>
+    <div class="col-12 col-lg-4">
+      <div class="card">
+        <div class="card-header">
+          <h5>
+            Engine Load Share
+          </h5>
           <p class="text-secondary">
-            Plotly.js creates great interactive charts with a lot of functionality and flexibility. It uses <code>svg</code>
+            Live Data
           </p>
         </div>
-      </div>
-    </div>
-  </div>
-  <h5 class="section-title">
-    Basic Charts
-  </h5>
-  <div class="row">
-    <div class="col-lg-6 col-12">
-      <div class="card">
-      <div class="card-header pb-0">
-          <h5>
-            Line Chart
-          </h5>
-      </div>
-        <div class="card-body pt-0">
-
-
+        <div class="card-body">
           <div class="chart-container">
-
-            <div id="line-1"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-6 col-12">
-      <div class="card">
-      <div class="card-header pb-0">
-          <h5>
-            Bar Chart
-          </h5>
-      </div>
-        <div class="card-body pt-0">
-
-
-          <div class="chart-container">
-
-            <div id="bar-1"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-  <div class="row">
-    <div class="col-lg-6 col-12">
-      <div class="card">
-      <div class="card-header pb-0">
-          <h5>
-            Pie Chart
-          </h5>
-      </div>
-        <div class="card-body pt-0">
-
-
-          <div class="chart-container">
-
             <div id="pie-1"></div>
           </div>
         </div>
       </div>
     </div>
-    <div class="col-lg-6 col-12">
-      <div class="card">
-      <div class="card-header pb-0">
-          <h5>
-            Scatter Chart
-          </h5>
-      </div>
-        <div class="card-body pt-0">
-
-
-          <div class="chart-container">
-
-            <div id="scatter-1"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-  <h5 class="section-title">
-    Advanced Charts
-  </h5>
-  <div class="row">
-    <div class="col-lg-6 col-12">
-      <div class="card">
-      <div class="card-header pb-0">
-          <h5>
-            Box Plot
-          </h5>
-      </div>
-        <div class="card-body pt-0">
-
-
-          <div class="chart-container">
-
-            <div id="box-1"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-6 col-12">
-      <div class="card">
-      <div class="card-header pb-0">
-          <h5>
-            Horizontal Bar Chart
-          </h5>
-      </div>
-        <div class="card-body pt-0">
-
-
-          <div class="chart-container">
-
-            <div id="bar-2"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
   </div>
 </div>
 
@@ -1333,171 +1515,163 @@
 <script src="../scripts/card.min.js"></script>
 <script src="../scripts/simplify.min.js"></script>
   
+<script src="../vendor/Chart.min.js"></script>
 <script src="../vendor/d3.min.js"></script>
-<script src="../vendor/plotly.min.js"></script>
+<script src="../vendor/c3.min.js"></script>
 <script>
-
-var demodata =  [
-  {
-    data: [
+var chartdata = [{
+  type: 'line',
+  data: {
+    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    datasets: [
       {
-        x: [1, 2, 3, 4, 5, 6],
-        y: [10, 15, 13, 17, 12, 11],
-        width: [0.3, 0.3, 0.3, 0.3, 0.3, 0.3],
-        marker: {color: colors['purple'].toString()},
-        type: 'scatter'
-      },
-      {
-        x: [1, 2, 3, 4, 5, 6],
-        y: [16, 5, 11, 9, 5, 7],
-        type: 'scatter',
-        marker: {color: colors['orange'].toString()},
-      }
-    ],
-    layout: {
-      xaxis: {
-        autotick: false,
-        tick0: 0,
-      },
-      yaxis: {
-        autotick: false,
-        tick0: 0,
-      },
-    }
-  },
-  {
-    data: [
-      {
-        x: [1, 2, 3, 4, 5, 6],
-        y: [10, 15, 13, 17, 12, 11],
-        width: [0.3, 0.3, 0.3, 0.3, 0.3, 0.3],
-        marker: {color: colors['blue'].toString()},
-        type: 'bar'
-      },
-      {
-        x: [1, 2, 3, 4, 5, 6],
-        y: [16, 5, 11, 9, 5, 7],
-        width: [0.3, 0.3, 0.3, 0.3, 0.3, 0.3],
-        marker: {color: colors['teal'].toString()},
-        type: 'bar'
-      }
-    ],
-    layout: {
-      xaxis: {
-        autotick: false,
-        tick0: 0,
-      },
-      yaxis: {
-        autotick: false,
-        tick0: 0,
-      },
-    }
-  },
-  {
-    data: [
-      {
-        labels: [1, 2, 3, 4, 5, 6],
-        values: [10, 15, 13, 17, 12, 11],
-        marker: {colors: [
-          colors['blue'].toString(),
-          colors['green'].toString(),
-          colors['red'].toString(),
-          colors['purple'].toString(),
-          colors['teal'].toString(),
-          colors['orange'].toString(),
-        ]},
-        type: 'pie'
-      },
-    ]
-  },
-  {
-    data: [
-      {
-        x: [1, 2, 3, 4, 5, 6],
-        y: [10, 15, 13, 17, 12, 11],
-        width: [0.3, 0.3, 0.3, 0.3, 0.3, 0.3],
-        marker: {color: colors['purple'].toString()},
-        type: 'scatter',
-        mode: 'markers',
-      },
-      {
-        x: [1, 2, 3, 4, 5, 6],
-        y: [16, 5, 11, 9, 5, 7],
-        type: 'scatter',
-        marker: {color: colors['orange'].toString()},
-        mode: 'markers',
-      }
-    ],
-    layout: {
-      xaxis: {
-        autotick: false,
-        tick0: 0,
-      },
-      yaxis: {
-        autotick: false,
-        tick0: 0,
-      },
+      label: '# of Votes',
+      data: [6, 7, 3, 5, 2, 4],
+      lineTension: 0,
+      backgroundColor: colors['purple'].alpha(0.2).toString(),
+      borderColor: colors['purple'].toString(),
+      borderWidth: 2,
+      pointRadius: 0,
     },
-
+  ]
   },
-  {
-    data: [
-      {
-        y: getBoxData(),
-        type: 'box',
-        marker: {color: colors['blue'].toString()},
-      },
-      {
-        y: getBoxData(),
-        type: 'box',
-        marker: {color: colors['cyan'].toString()},
-      },
-      {
-        y: getBoxData(),
-        type: 'box',
-        marker: {color: colors['teal'].toString()},
-      }
-
-    ]
-  },
-  {
-    data: [
-      {
-        y: [1, 2, 3, 4, 5, 6],
-        x: [10, 15, 13, 17, 12, 11],
-        width: [0.3, 0.3, 0.3, 0.3, 0.3, 0.3],
-        marker: {color: colors['blue'].toString()},
-        type: 'bar',
-        orientation: 'h'
-      },
-    ],
-  },
-
-]
-function getBoxData() {
-  let y = [];
-  for ( let i = 0; i < 50; i ++)
-  {
-      y[i] = Math.random();
-
+  options: {
+    maintainAspectRatio: false,
+    scales: {
+      yAxes: [{
+        display: false,
+        ticks: {
+          beginAtZero: true
+        }
+      }],
+      xAxes: [{
+        display: false,
+      }]
+    },
+    legend: {
+      display: false,
+    }
   }
-  return y;
-}
-var layout =  {
-  margin: {
-    l: 50,
-    r: 30,
-    b: 50,
-    t: 40,
-    pad: 4
+},
+{
+    type: 'bar',
+    data: {
+
+      labels: ['Jan', 'Feb', 'March', 'June', 'July', 'April'],
+      datasets: [
+
+        {
+          type: 'bar',
+          label: 'Revenue last year',
+          data: [3, 6, 5, 9, 4, 9.5],
+          lineTension: 0.4,
+          backgroundColor: colors['blue'].alpha(0.9).toString(),
+          borderColor: colors['blue'].toString(),
+          borderWidth: 2,
+          pointRadius: 1,
+
+      },
+      {
+        type: 'bar',
+        label: 'Revenue last year',
+        data: [2, 3, 1, 5, 1, 4],
+        lineTension: 0.4,
+        backgroundColor: colors['purple'].alpha(0.9).toString(),
+        borderColor: colors['purple'].toString(),
+        borderWidth: 2,
+        pointRadius: 1,
+
+      }
+    ]
+    },
+    options: {
+      maintainAspectRatio: false,
+      scales: {
+        yAxes: [{
+          display: true,
+          ticks: {
+            beginAtZero: true
+          }
+        }],
+        xAxes: [{
+          barPercentage: 0.6,
+          categoryPercentage: 0.4,
+          display: true,
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      },
+      legend: {
+        display: false,
+      }
+    }
   },
-};
-Plotly.newPlot(document.getElementById('line-1'), demodata[0].data, layout);
-Plotly.newPlot(document.getElementById('bar-1'), demodata[1].data, layout);
-Plotly.newPlot(document.getElementById('pie-1'), demodata[2].data, layout);
-Plotly.newPlot(document.getElementById('scatter-1'), demodata[3].data, layout);
-Plotly.newPlot(document.getElementById('box-1'), demodata[4].data, layout);
-Plotly.newPlot(document.getElementById('bar-2'), demodata[5].data, layout);
+  {
+    type: 'line',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [
+        {
+        label: '# of Votes',
+        data: [3, 4, 3, 6, 4, 7],
+        lineTension: 0,
+        backgroundColor: colors['green'].alpha(0.2).toString(),
+        borderColor: colors['green'].toString(),
+        borderWidth: 2,
+        pointRadius: 0,
+      },
+    ]
+    },
+    options: {
+      maintainAspectRatio: false,
+      scales: {
+        yAxes: [{
+          display: false,
+          ticks: {
+            beginAtZero: true
+          }
+        }],
+        xAxes: [{
+          display: false,
+        }]
+      },
+      legend: {
+        display: false,
+      }
+    }
+  },
+  {
+     columns: [
+         ['Fusion', 150],
+         ['Fission', 100],
+         ['Dark Matter', 50],
+         ['Hydrogen', 80],
+
+
+     ],
+     colors: {
+         'Fusion': colors['purple'].alpha(0.9).toString(),
+         'Fission': colors['blue'].alpha(0.9).toString(),
+         'Dark Matter': colors['orange'].alpha(0.9).toString(),
+         'Hydrogen': colors['green'].alpha(0.9).toString(),
+
+     },
+     type: 'donut'
+ }
+];
+var ctx1 = document.getElementById('line-1').getContext('2d');
+var chart1 = new Chart(ctx1, chartdata[0]);
+var ctx2 = document.getElementById('bar-1').getContext('2d');
+var chart2 = new Chart(ctx2, chartdata[1]);
+
+var ctx3 = document.getElementById('line-2').getContext('2d');
+var chart3 = new Chart(ctx3, chartdata[2]);
+
+var pie = c3.generate({
+    bindto: '#pie-1',
+    data: chartdata[3]
+});
 </script>
 
 
