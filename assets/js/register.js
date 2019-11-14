@@ -13,11 +13,11 @@ function register() {
         username: username,
         pass: password,
         email: adressMail,
-        role:'user'
+        role:'admin'
     }
 
     tab.push(user);
     localStorage.setItem("user", JSON.stringify(tab));
     console.log(tab);
-    location.href = 'file:///C:/Users/admin/Desktop/projet%20javascript/rentCar/car-listing.html'
+    location.href = '../car-listing.html'
 }
