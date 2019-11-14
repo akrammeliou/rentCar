@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="../css/simplify.min.css">
   <title>Simplify Admin</title>
 </head>
-<body>
+<body onload="affichermarque()">
   
 <div class="full-page">
   <div class="sidebar-container">
@@ -79,7 +79,7 @@
                     </a>
                   </li>
                   <li class="list-nav-item list-nav-child-item">
-                      <a href="../tables/brandsAll.html" class="list-nav-link">
+                      <a href="/" class="list-nav-link">
                         <span class="list-nav-icon list-nav-icon-sm">
                           <i class="material-icons">keyboard_arrow_right</i>
                         </span>
@@ -355,455 +355,113 @@
                 </div>
                 <div style="flex:1">
                   <div class="py-6 px-8 pr-10 border-left">
-                    <form>
-                      <h5 class="font-weight-bold text-secondary mb-6">Cars Details</h5>
-                      <div class="form-group mb-6">
-                        <label for="fname">Matricule</label>
-                        <input type="text" class="form-control" value="" id="fname">
-                      </div>
-
-                      <div class="form-group mb-6">
-                        <label for="lname">Mark</label>
-                            <select id="makes" class="form-control" name="make" class="selected">
-                                <option value="" class="top">Marque</option>
-                                <option name="make" value="RENAULT" class="top">RENAULT</option>
-                                <option name="make" value="PEUGEOT" class="top">PEUGEOT</option>
-                                <option name="make" value="CITROEN" class="top">CITROEN</option>
-                                <option name="make" value="BMW" class="top">BMW</option>
-                                <option name="make" value="VOLKSWAGEN" class="top">VOLKSWAGEN</option>
-                                <option value="" class="top" disabled="">----------------</option>
-                                <option name="make" value="ABARTH">ABARTH</option>
-                                <option name="make" value="ABI">ABI</option>
-                                <option name="make" value="AC">AC</option>
-                                <option name="make" value="ACREA">ACREA</option>
-                                <option name="make" value="ADLER">ADLER</option>
-                                <option name="make" value="ADRIA">ADRIA</option>
-                                <option name="make" value="AIXAM">AIXAM</option>
-                                <option name="make" value="ALEKO">ALEKO</option>
-                                <option name="make" value="ALFA ROMEO">ALFA ROMEO</option>
-                                <option name="make" value="ALKE">ALKE</option>
-                                <option name="make" value="ALPINA">ALPINA</option>
-                                <option name="make" value="ALPINE">ALPINE</option>
-                                <option name="make" value="ALVIS">ALVIS</option>
-                                <option name="make" value="AMC">AMC</option>
-                                <option name="make" value="AMPHICAR">AMPHICAR</option>
-                                <option name="make" value="ANAIG">ANAIG</option>
-                                <option name="make" value="APAL">APAL</option>
-                                <option name="make" value="ARIEL">ARIEL</option>
-                                <option name="make" value="ARMSTRONG SIDDELEY">ARMSTRONG SIDDELEY</option>
-                                <option name="make" value="ARO">ARO</option>
-                                <option name="make" value="ARTEGA">ARTEGA</option>
-                                <option name="make" value="ASTON MARTIN">ASTON MARTIN</option>
-                                <option name="make" value="ATLAS">ATLAS</option>
-                                <option name="make" value="AUBURN">AUBURN</option>
-                                <option name="make" value="AUDI">AUDI</option>
-                                <option name="make" value="AUSTIN">AUSTIN</option>
-                                <option name="make" value="AUSTIN HEALEY">AUSTIN HEALEY</option>
-                                <option name="make" value="AUTO UNION">AUTO UNION</option>
-                                <option name="make" value="AUTOBIANCHI">AUTOBIANCHI</option>
-                                <option name="make" value="AUTOSTAR">AUTOSTAR</option>
-                                <option name="make" value="AUVERLAND">AUVERLAND</option>
-                                <option name="make" value="AXXOR">AXXOR</option>
-                                <option name="make" value="BELLIER">BELLIER</option>
-                                <option name="make" value="BENTLEY">BENTLEY</option>
-                                <option name="make" value="BERLIET">BERLIET</option>
-                                <option name="make" value="BERTONE">BERTONE</option>
-                                <option name="make" value="BITTER">BITTER</option>
-                                <option name="make" value="BIZZARRINI">BIZZARRINI</option>
-                                <option name="make" value="BK BLUEBIRD">BK BLUEBIRD</option>
-                                <option name="make" value="BMW">BMW</option>
-                                <option name="make" value="BOLLORE">BOLLORE</option>
-                                <option name="make" value="BOOXT">BOOXT</option>
-                                <option name="make" value="BORGWARD">BORGWARD</option>
-                                <option name="make" value="BREMACH">BREMACH</option>
-                                <option name="make" value="BRISTOL">BRISTOL</option>
-                                <option name="make" value="BUGATTI">BUGATTI</option>
-                                <option name="make" value="BUICK">BUICK</option>
-                                <option name="make" value="BURBY S">BURBY S</option>
-                                <option name="make" value="BURSTNER">BURSTNER</option>
-                                <option name="make" value="CADILLAC">CADILLAC</option>
-                                <option name="make" value="CARAVELAIR">CARAVELAIR</option>
-                                <option name="make" value="CARBODIES">CARBODIES</option>
-                                <option name="make" value="CARDINAL">CARDINAL</option>
-                                <option name="make" value="CARRIAGE">CARRIAGE</option>
-                                <option name="make" value="CARVER">CARVER</option>
-                                <option name="make" value="CASALINI">CASALINI</option>
-                                <option name="make" value="CASITA">CASITA</option>
-                                <option name="make" value="CATERHAM">CATERHAM</option>
-                                <option name="make" value="CG">CG</option>
-                                <option name="make" value="CHATENET">CHATENET</option>
-                                <option name="make" value="CHENARD ET WALCKER">CHENARD ET WALCKER</option>
-                                <option name="make" value="CHEVROLET">CHEVROLET</option>
-                                <option name="make" value="CHRYSLER">CHRYSLER</option>
-                                <option name="make" value="CITROEN">CITROEN</option>
-                                <option name="make" value="CLEMENSON">CLEMENSON</option>
-                                <option name="make" value="CLENET">CLENET</option>
-                                <option name="make" value="CONSTRUCTAM">CONSTRUCTAM</option>
-                                <option name="make" value="COSTE">COSTE</option>
-                                <option name="make" value="COURB">COURB</option>
-                                <option name="make" value="CUPRA">CUPRA</option>
-                                <option name="make" value="DACIA">DACIA</option>
-                                <option name="make" value="DAEWOO">DAEWOO</option>
-                                <option name="make" value="DAF">DAF</option>
-                                <option name="make" value="DAIHATSU">DAIHATSU</option>
-                                <option name="make" value="DAIMLER">DAIMLER</option>
-                                <option name="make" value="DANGEL">DANGEL</option>
-                                <option name="make" value="DARMONT">DARMONT</option>
-                                <option name="make" value="DATSUN">DATSUN</option>
-                                <option name="make" value="DE FREMOND">DE FREMOND</option>
-                                <option name="make" value="DE LA CHAPELLE">DE LA CHAPELLE</option>
-                                <option name="make" value="DE LOREAN">DE LOREAN</option>
-                                <option name="make" value="DE SOTO">DE SOTO</option>
-                                <option name="make" value="DE TOMASO">DE TOMASO</option>
-                                <option name="make" value="DELAGE">DELAGE</option>
-                                <option name="make" value="DELAHAYE">DELAHAYE</option>
-                                <option name="make" value="DELTA">DELTA</option>
-                                <option name="make" value="DETHLEFFS">DETHLEFFS</option>
-                                <option name="make" value="DEUTSCH-BONNET">DEUTSCH-BONNET</option>
-                                <option name="make" value="DEVINCI">DEVINCI</option>
-                                <option name="make" value="DIGUE">DIGUE</option>
-                                <option name="make" value="DKW">DKW</option>
-                                <option name="make" value="DODGE">DODGE</option>
-                                <option name="make" value="DONKERVOORT">DONKERVOORT</option>
-                                <option name="make" value="DONNET">DONNET</option>
-                                <option name="make" value="DS">DS</option>
-                                <option name="make" value="DUE">DUE</option>
-                                <option name="make" value="EAGLE">EAGLE</option>
-                                <option name="make" value="EBRO">EBRO</option>
-                                <option name="make" value="EDSEL">EDSEL</option>
-                                <option name="make" value="ELDDIS">ELDDIS</option>
-                                <option name="make" value="ELV">ELV</option>
-                                <option name="make" value="ERAD">ERAD</option>
-                                <option name="make" value="ERIBA">ERIBA</option>
-                                <option name="make" value="ESTEREL">ESTEREL</option>
-                                <option name="make" value="ESTRIMA">ESTRIMA</option>
-                                <option name="make" value="EUROSTAR">EUROSTAR</option>
-                                <option name="make" value="EXCALIBUR">EXCALIBUR</option>
-                                <option name="make" value="FACEL VEGA">FACEL VEGA</option>
-                                <option name="make" value="FAM AUTOMOBILES">FAM AUTOMOBILES</option>
-                                <option name="make" value="FARALLI &amp; MAZZANTI">FARALLI &amp; MAZZANTI</option>
-                                <option name="make" value="FENDT">FENDT</option>
-                                <option name="make" value="FERRARI">FERRARI</option>
-                                <option name="make" value="FIAT">FIAT</option>
-                                <option name="make" value="FISKER">FISKER</option>
-                                <option name="make" value="FLEURETTE">FLEURETTE</option>
-                                <option name="make" value="FORD">FORD</option>
-                                <option name="make" value="FORNASARI">FORNASARI</option>
-                                <option name="make" value="FSO">FSO</option>
-                                <option name="make" value="GAC GONOW">GAC GONOW</option>
-                                <option name="make" value="GILLET">GILLET</option>
-                                <option name="make" value="GINETTA">GINETTA</option>
-                                <option name="make" value="GLAS">GLAS</option>
-                                <option name="make" value="GMC">GMC</option>
-                                <option name="make" value="GME">GME</option>
-                                <option name="make" value="GRANDIN">GRANDIN</option>
-                                <option name="make" value="GRECAV">GRECAV</option>
-                                <option name="make" value="GRUAU">GRUAU</option>
-                                <option name="make" value="GUMPERT">GUMPERT</option>
-                                <option name="make" value="HALMARQ">HALMARQ</option>
-                                <option name="make" value="HILLMAN">HILLMAN</option>
-                                <option name="make" value="HOBBY">HOBBY</option>
-                                <option name="make" value="HOMMELL">HOMMELL</option>
-                                <option name="make" value="HONDA">HONDA</option>
-                                <option name="make" value="HOTCHKISS">HOTCHKISS</option>
-                                <option name="make" value="HUDSON">HUDSON</option>
-                                <option name="make" value="HUMBER">HUMBER</option>
-                                <option name="make" value="HUMMER">HUMMER</option>
-                                <option name="make" value="HYUNDAI">HYUNDAI</option>
-                                <option name="make" value="IMPERIAL">IMPERIAL</option>
-                                <option name="make" value="INFINITI">INFINITI</option>
-                                <option name="make" value="INNOCENTI">INNOCENTI</option>
-                                <option name="make" value="INTERMECCANICA">INTERMECCANICA</option>
-                                <option name="make" value="INTERNATIONAL">INTERNATIONAL</option>
-                                <option name="make" value="ISO">ISO</option>
-                                <option name="make" value="ISUZU">ISUZU</option>
-                                <option name="make" value="ITALCAR">ITALCAR</option>
-                                <option name="make" value="IVECO">IVECO</option>
-                                <option name="make" value="JAGUAR">JAGUAR</option>
-                                <option name="make" value="JDM SIMPA">JDM SIMPA</option>
-                                <option name="make" value="JEEP">JEEP</option>
-                                <option name="make" value="JENSEN">JENSEN</option>
-                                <option name="make" value="JIAYUAN">JIAYUAN</option>
-                                <option name="make" value="KASSBOHRER SETRA">KASSBOHRER SETRA</option>
-                                <option name="make" value="KEYSTONE">KEYSTONE</option>
-                                <option name="make" value="KIA">KIA</option>
-                                <option name="make" value="KIP">KIP</option>
-                                <option name="make" value="KNAUS">KNAUS</option>
-                                <option name="make" value="KOENIGSEGG">KOENIGSEGG</option>
-                                <option name="make" value="KTM">KTM</option>
-                                <option name="make" value="LA BOHEME">LA BOHEME</option>
-                                <option name="make" value="LA MANCELLE">LA MANCELLE</option>
-                                <option name="make" value="LADA">LADA</option>
-                                <option name="make" value="LAGONDA">LAGONDA</option>
-                                <option name="make" value="LAMBORGHINI">LAMBORGHINI</option>
-                                <option name="make" value="LANCIA">LANCIA</option>
-                                <option name="make" value="LAND ROVER">LAND ROVER</option>
-                                <option name="make" value="LANDWIND">LANDWIND</option>
-                                <option name="make" value="LANTANA">LANTANA</option>
-                                <option name="make" value="LARAKI">LARAKI</option>
-                                <option name="make" value="LDV">LDV</option>
-                                <option name="make" value="LEFEUNE">LEFEUNE</option>
-                                <option name="make" value="LEXUS">LEXUS</option>
-                                <option name="make" value="LIGIER">LIGIER</option>
-                                <option name="make" value="LINCOLN">LINCOLN</option>
-                                <option name="make" value="LMC">LMC</option>
-                                <option name="make" value="LONDON TAXI COMPANY">LONDON TAXI COMPANY</option>
-                                <option name="make" value="LORD">LORD</option>
-                                <option name="make" value="LOTUS">LOTUS</option>
-                                <option name="make" value="MAHINDRA">MAHINDRA</option>
-                                <option name="make" value="MAN">MAN</option>
-                                <option name="make" value="MARCADIER">MARCADIER</option>
-                                <option name="make" value="MARCOS">MARCOS</option>
-                                <option name="make" value="MARTIN">MARTIN</option>
-                                <option name="make" value="MARUTI">MARUTI</option>
-                                <option name="make" value="MASERATI">MASERATI</option>
-                                <option name="make" value="MATRA">MATRA</option>
-                                <option name="make" value="MAYBACH">MAYBACH</option>
-                                <option name="make" value="MAZDA">MAZDA</option>
-                                <option name="make" value="MCLAREN">MCLAREN</option>
-                                <option name="make" value="MEGA">MEGA</option>
-                                <option name="make" value="MERCEDES">MERCEDES</option>
-                                <option name="make" value="MERCEDES-AMG">MERCEDES-AMG</option>
-                                <option name="make" value="MERCURY">MERCURY</option>
-                                <option name="make" value="MESSERSCHMITT">MESSERSCHMITT</option>
-                                <option name="make" value="MEV">MEV</option>
-                                <option name="make" value="MEYERS MANX">MEYERS MANX</option>
-                                <option name="make" value="MG">MG</option>
-                                <option name="make" value="MIA ELECTRIC">MIA ELECTRIC</option>
-                                <option name="make" value="MICROCAR">MICROCAR</option>
-                                <option name="make" value="MINAUTO">MINAUTO</option>
-                                <option name="make" value="MINI">MINI</option>
-                                <option name="make" value="MITSUBISHI">MITSUBISHI</option>
-                                <option name="make" value="MITSUOKA">MITSUOKA</option>
-                                <option name="make" value="MOBILIS">MOBILIS</option>
-                                <option name="make" value="MONTANA">MONTANA</option>
-                                <option name="make" value="MONTEVERDI">MONTEVERDI</option>
-                                <option name="make" value="MORGAN">MORGAN</option>
-                                <option name="make" value="MORRIS">MORRIS</option>
-                                <option name="make" value="MPM MOTORS">MPM MOTORS</option>
-                                <option name="make" value="MVS">MVS</option>
-                                <option name="make" value="NASH">NASH</option>
-                                <option name="make" value="NECKAR">NECKAR</option>
-                                <option name="make" value="NEWMAR">NEWMAR</option>
-                                <option name="make" value="NISSAN">NISSAN</option>
-                                <option name="make" value="NOBLE">NOBLE</option>
-                                <option name="make" value="NOUN ELECTRIC">NOUN ELECTRIC</option>
-                                <option name="make" value="NSU">NSU</option>
-                                <option name="make" value="NU WA">NU WA</option>
-                                <option name="make" value="OLDSMOBILE">OLDSMOBILE</option>
-                                <option name="make" value="OPEL">OPEL</option>
-                                <option name="make" value="OSI">OSI</option>
-                                <option name="make" value="PACKARD">PACKARD</option>
-                                <option name="make" value="PAGANI">PAGANI</option>
-                                <option name="make" value="PANHARD">PANHARD</option>
-                                <option name="make" value="PANTHER">PANTHER</option>
-                                <option name="make" value="PEGASO">PEGASO</option>
-                                <option name="make" value="PEUGEOT">PEUGEOT</option>
-                                <option name="make" value="PGO">PGO</option>
-                                <option name="make" value="PIAGGIO">PIAGGIO</option>
-                                <option name="make" value="PLUMA">PLUMA</option>
-                                <option name="make" value="PLYMOUTH">PLYMOUTH</option>
-                                <option name="make" value="POLESTAR">POLESTAR</option>
-                                <option name="make" value="POLSKI">POLSKI</option>
-                                <option name="make" value="PONTIAC">PONTIAC</option>
-                                <option name="make" value="PORSCHE">PORSCHE</option>
-                                <option name="make" value="PROTON">PROTON</option>
-                                <option name="make" value="QOROS">QOROS</option>
-                                <option name="make" value="RACLET">RACLET</option>
-                                <option name="make" value="RADICAL">RADICAL</option>
-                                <option name="make" value="RAPIDO">RAPIDO</option>
-                                <option name="make" value="RAULT">RAULT</option>
-                                <option name="make" value="REALM">REALM</option>
-                                <option name="make" value="RELIANT">RELIANT</option>
-                                <option name="make" value="RENAULT">RENAULT</option>
-                                <option name="make" value="RENE BONNET">RENE BONNET</option>
-                                <option name="make" value="RILEY">RILEY</option>
-                                <option name="make" value="ROLLS ROYCE">ROLLS ROYCE</option>
-                                <option name="make" value="ROSENGART">ROSENGART</option>
-                                <option name="make" value="ROVER">ROVER</option>
-                                <option name="make" value="SAAB">SAAB</option>
-                                <option name="make" value="SAIC">SAIC</option>
-                                <option name="make" value="SALEEN">SALEEN</option>
-                                <option name="make" value="SALMSON">SALMSON</option>
-                                <option name="make" value="SANTANA">SANTANA</option>
-                                <option name="make" value="SAURIUM">SAURIUM</option>
-                                <option name="make" value="SAVEL">SAVEL</option>
-                                <option name="make" value="SAVIEM">SAVIEM</option>
-                                <option name="make" value="SCANIA">SCANIA</option>
-                                <option name="make" value="SEAT">SEAT</option>
-                                <option name="make" value="SECMA">SECMA</option>
-                                <option name="make" value="SHELBY">SHELBY</option>
-                                <option name="make" value="SIMCA">SIMCA</option>
-                                <option name="make" value="SINGER">SINGER</option>
-                                <option name="make" value="SIR PALACE">SIR PALACE</option>
-                                <option name="make" value="SKODA">SKODA</option>
-                                <option name="make" value="SMART">SMART</option>
-                                <option name="make" value="SMS">SMS</option>
-                                <option name="make" value="SOVAMAG">SOVAMAG</option>
-                                <option name="make" value="SPECTRE">SPECTRE</option>
-                                <option name="make" value="SPYKER">SPYKER</option>
-                                <option name="make" value="SSANGYONG">SSANGYONG</option>
-                                <option name="make" value="STAR">STAR</option>
-                                <option name="make" value="STERCKEMAN">STERCKEMAN</option>
-                                <option name="make" value="STUDEBAKER">STUDEBAKER</option>
-                                <option name="make" value="STUTZ">STUTZ</option>
-                                <option name="make" value="SUBARU">SUBARU</option>
-                                <option name="make" value="SUN ROLLER">SUN ROLLER</option>
-                                <option name="make" value="SUNBEAM">SUNBEAM</option>
-                                <option name="make" value="SUZUKI">SUZUKI</option>
-                                <option name="make" value="TABBERT">TABBERT</option>
-                                <option name="make" value="TALBOT">TALBOT</option>
-                                <option name="make" value="TALBOT SIMCA">TALBOT SIMCA</option>
-                                <option name="make" value="TATA">TATA</option>
-                                <option name="make" value="TEILHOL">TEILHOL</option>
-                                <option name="make" value="TESLA">TESLA</option>
-                                <option name="make" value="THINK">THINK</option>
-                                <option name="make" value="TISCHER">TISCHER</option>
-                                <option name="make" value="TOYOTA">TOYOTA</option>
-                                <option name="make" value="TRABANT">TRABANT</option>
-                                <option name="make" value="TRAVEL">TRAVEL</option>
-                                <option name="make" value="TRIGANO">TRIGANO</option>
-                                <option name="make" value="TRIUMPH">TRIUMPH</option>
-                                <option name="make" value="TVR">TVR</option>
-                                <option name="make" value="ULTIMA">ULTIMA</option>
-                                <option name="make" value="UMM">UMM</option>
-                                <option name="make" value="VAL DE LOIRE">VAL DE LOIRE</option>
-                                <option name="make" value="VAN HOOL">VAN HOOL</option>
-                                <option name="make" value="VANDEN PLAS">VANDEN PLAS</option>
-                                <option name="make" value="VAUXHALL">VAUXHALL</option>
-                                <option name="make" value="VELAM">VELAM</option>
-                                <option name="make" value="VENTURI">VENTURI</option>
-                                <option name="make" value="VESPA">VESPA</option>
-                                <option name="make" value="VINFAST">VINFAST</option>
-                                <option name="make" value="VOLKSWAGEN">VOLKSWAGEN</option>
-                                <option name="make" value="VOLTEIS">VOLTEIS</option>
-                                <option name="make" value="VOLVO">VOLVO</option>
-                                <option name="make" value="WALLYS CAR">WALLYS CAR</option>
-                                <option name="make" value="WEIPPERT">WEIPPERT</option>
-                                <option name="make" value="WESTFIELD">WESTFIELD</option>
-                                <option name="make" value="WIESMANN">WIESMANN</option>
-                                <option name="make" value="WILK">WILK</option>
-                                <option name="make" value="WILLERBY">WILLERBY</option>
-                                <option name="make" value="WILLYS">WILLYS</option>
-                                <option name="make" value="WOLSELEY">WOLSELEY</option>
-                                <option name="make" value="XINYANG">XINYANG</option>
-                                <option name="make" value="ZASTAVA">ZASTAVA</option>
-                              </select>
-                      </div>
-                      <div class="form-group mb-6">
-                        <label for="femail">Model</label>
-                          <select class="form-control" id="models" name="model">
-                            <option value="">Modèle</option>
-                            <option value="ALASKAN">ALASKAN</option>
-                            <option value="AVANTIME">AVANTIME</option>
-                            <option value="CAPTUR">CAPTUR</option>
-                            <option value="CLIO">CLIO</option>
-                            <option value="ESPACE">ESPACE</option>
-                            <option value="EXPRESS">EXPRESS</option>
-                            <option value="FLUENCE">FLUENCE</option>
-                            <option value="FUEGO">FUEGO</option>
-                            <option value="GRAND ESPACE">GRAND ESPACE</option>
-                            <option value="GRAND KANGOO">GRAND KANGOO</option>
-                            <option value="GRAND MODUS">GRAND MODUS</option>
-                            <option value="GRAND SCENIC">GRAND SCENIC</option>
-                            <option value="KADJAR">KADJAR</option><option value="KANGOO">KANGOO</option><option value="KANGOO EXPRESS">KANGOO EXPRESS</option><option value="KOLEOS">KOLEOS</option><option value="LAGUNA">LAGUNA</option><option value="LATITUDE">LATITUDE</option><option value="MASCOTT">MASCOTT</option><option value="MASTER">MASTER</option><option value="MAXITY">MAXITY</option><option value="MEGANE">MEGANE</option><option value="MIDLUM">MIDLUM</option><option value="MODUS">MODUS</option><option value="R11">R11</option><option value="R18">R18</option><option value="R19">R19</option><option value="R20">R20</option><option value="R21">R21</option><option value="R25">R25</option><option value="R30">R30</option><option value="R4">R4</option><option value="R5">R5</option><option value="R9">R9</option><option value="RAMBLER">RAMBLER</option><option value="RODEO">RODEO</option><option value="SAFRANE">SAFRANE</option><option value="SCENIC">SCENIC</option><option value="SPIDER">SPIDER</option><option value="SUPER 5">SUPER 5</option><option value="TALISMAN">TALISMAN</option><option value="TRAFIC">TRAFIC</option><option value="TWINGO">TWINGO</option><option value="TWIZY">TWIZY</option><option value="VEL SATIS">VEL SATIS</option><option value="WIND">WIND</option><option value="WRANGLER">WRANGLER</option><option value="ZOE">ZOE</option>
-                          </select>
-                      </div>
-                      <div class="form-group mb-6">
-                        <label for="fphone">Year</label>
-                        <input type="date" class="form-control" value="" id="year">
-                      </div>
-                      <div class="form-group mb-6">
-                          <label for="fphone"><b>Energy</b></label>
-                          <input type="radio" class="form-control" name="Gasoline" id="gasoline" checked>Gasoline
-                          <input type="radio" class="form-control" name="Diesel" id="diesel">Diesel
-                      </div>
-                      <div class="form-group mb-6">
-                          <label for="fphone"><b>Boite</b></label>
-                          <input type="radio" class="form-control" name="Manual" id="manual" checked>Manual
-                          <input type="radio" class="form-control" name="Auto" id="auto">Auto
-                      </div>
-                      <div class="row">
-                          <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                            <ul class="r-fee-list" style="list-style-type: none;">
-                              <li class="clearfix r-site-checkbox">
-                                <label>
-                                  Exsess Protection
-                                  <span class="r-extra-fee">$14.00</span>
-                                  <input type="checkbox" style="position: absolute;left: 32px;">
-                                </label>
-                               </li>
-                              <li class="clearfix r-site-checkbox">
-                                <label>
-                                  Navigation
-                                  <span class="r-extra-fee">$10.00</span>
-                                  <input type="checkbox" style="position: absolute;left: 32px;">  
-                                </label>
-                               </li>
-                               <li class="clearfix r-site-checkbox">
-                                 <label>
-                                   Baby Seat
-                                   <span class="r-extra-fee">$8.00</span>
-                                   <input type="checkbox" style="position: absolute;left: 32px;">
-                                 </label>
-                                </li>
-                               <li class="clearfix r-site-checkbox">
-                                 <label>
-                                    Car Seat For Childrens
-                                   <span class="r-extra-fee">$10.15</span>
-                                   <input type="checkbox" style="position: absolute;left: 32px;">
-                                     </label>
-                                </li>
-                               <li class="clearfix r-site-checkbox">
-                                 <label>
-                                  Additional Driver
-                                   <span class="r-extra-fee">$14.25</span>
-                                   <input type="checkbox" style="position: absolute;left: 32px;">
-                                        </label>
-                                </li>
-                            </ul>
+                      <form>
+                          <h5 class="font-weight-bold text-secondary mb-6">Cars Details</h5>
+                          <div class="form-group mb-6">
+                              <label for="fname">Matricule</label>
+                              <input type="text" class="form-control" value="" id="matricule">
                           </div>
-                          <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                            <ul class="r-fee-list" style="list-style-type: none;">
-                              <li class="clearfix r-site-checkbox">
-                                <label>
-                                  Exsess Protection
-                                  <span class="r-extra-fee">$14.00</span>
-                                  <input type="checkbox" style="position: absolute;left: 32px;">
-                                     </label>
-                               </li>
-                              <li class="clearfix r-site-checkbox">
-                                <label>
-                                  Navigation
-                                  <span class="r-extra-fee">$10.00</span>
-                                  <input type="checkbox" style="position: absolute;left: 32px;">
-                                      </label>
-                               </li>
-                               <li class="clearfix r-site-checkbox">
-                                 <label>
-                                   Baby Seat
-                                   <span class="r-extra-fee">$8.00</span>
-                                   <input type="checkbox" style="position: absolute;left: 32px;">
-                                   </label>
-                                </li>
-                               <li class="clearfix r-site-checkbox">
-                                 <label>
-                                    Car Seat For Childrens
-                                   <span class="r-extra-fee">$10.15</span>
-                                   <input type="checkbox" style="position: absolute;left: 32px;">
-                                      </label>
-                                </li>
-                               <li class="clearfix r-site-checkbox">
-                                 <label>
-                                  Additional Driver
-                                   <span class="r-extra-fee">$14.25</span>
-                                   <input type="checkbox" style="position: absolute;left: 32px;">
-                                  </label>
-                                </li>
-                            </ul>
+                          <div class="form-group mb-6" id="mark">
                           </div>
-                        </div>
-                    </form>
+                          <div class="form-group mb-6" id="modele">
+                          </div>
+                          <div class="form-group mb-6">
+                              <label for="fphone">Year</label>
+                              <input type="date" class="form-control" value="" id="year">
+                          </div>
+                          <div class="form-group mb-6">
+                      
+                              <label for="fphone"><b>Energy</b></label>
+                                  <input type="radio" class="form-control" name="Gasoline" id="gasoline" checked>Gasoline
+                                  <input type="radio" class="form-control" name="Diesel" id="diesel">Diesel
+                          </div>
+                          <div class="form-group mb-6">
+                      
+                              <label for="fphone"><b>Boite</b></label>
+                                  <input type="radio" class="form-control" name="Manual" id="manual" checked>Manual
+                                  <input type="radio" class="form-control" name="Auto" id="auto">Auto
+                          </div>
+                          <div class="row">
+                              <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                  <ul class="r-fee-list" style="list-style-type: none;">
+                                      <li class="clearfix r-site-checkbox">
+                                          <label>
+                                              Exsess Protection
+                                              <span class="r-extra-fee">$14.00</span>
+                                              <input type="checkbox" style="position: absolute;left: 32px;">
+                                          </label>
+                                      </li>
+                                      <li class="clearfix r-site-checkbox">
+                                          <label>
+                                              Navigation
+                                              <span class="r-extra-fee">$10.00</span>
+                                              <input type="checkbox" style="position: absolute;left: 32px;">
+                                          </label>
+                                      </li>
+                                      <li class="clearfix r-site-checkbox">
+                                          <label>
+                                              Baby Seat
+                                              <span class="r-extra-fee">$8.00</span>
+                                              <input type="checkbox" style="position: absolute;left: 32px;">
+                                          </label>
+                                      </li>
+                                      <li class="clearfix r-site-checkbox">
+                                          <label>
+                                              Car Seat For Childrens
+                                              <span class="r-extra-fee">$10.15</span>
+                                              <input type="checkbox" style="position: absolute;left: 32px;">
+                                          </label>
+                                      </li>
+                                      <li class="clearfix r-site-checkbox">
+                                          <label>
+                                              Additional Driver
+                                              <span class="r-extra-fee">$14.25</span>
+                                              <input type="checkbox" style="position: absolute;left: 32px;">
+                                          </label>
+                                      </li>
+                                  </ul>
+                              </div>
+                              <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                  <ul class="r-fee-list" style="list-style-type: none;">
+                                      <li class="clearfix r-site-checkbox">
+                                          <label>
+                                              Exsess Protection
+                                              <span class="r-extra-fee">$14.00</span>
+                                              <input type="checkbox" style="position: absolute;left: 32px;">
+                                          </label>
+                                      </li>
+                                      <li class="clearfix r-site-checkbox">
+                                          <label>
+                                              Navigation
+                                              <span class="r-extra-fee">$10.00</span>
+                                              <input type="checkbox" style="position: absolute;left: 32px;">
+                                          </label>
+                                      </li>
+                                      <li class="clearfix r-site-checkbox">
+                                          <label>
+                                              Baby Seat
+                                              <span class="r-extra-fee">$8.00</span>
+                                              <input type="checkbox" style="position: absolute;left: 32px;">
+                                          </label>
+                                      </li>
+                                      <li class="clearfix r-site-checkbox">
+                                          <label>
+                                              Car Seat For Childrens
+                                              <span class="r-extra-fee">$10.15</span>
+                                              <input type="checkbox" style="position: absolute;left: 32px;">
+                                          </label>
+                                      </li>
+                                      <li class="clearfix r-site-checkbox">
+                                          <label>
+                                              Additional Driver
+                                              <span class="r-extra-fee">$14.25</span>
+                                              <input type="checkbox" style="position: absolute;left: 32px;">
+                                          </label>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </form>
                   </div>
                   <div class="py-6 px-8 pr-10 border-left border-top">
                       <h5 class="font-weight-bold text-secondary mb-6">Bio</h5>
@@ -890,7 +548,6 @@
 
   </div>
 </aside>
-
     </div>
   </div>
 </div>
@@ -909,6 +566,8 @@
 <script src="../scripts/settings.min.js"></script>
 <script src="../scripts/card.min.js"></script>
 <script src="../scripts/simplify.min.js"></script>
+<script src="../scripts/adminJS/brands_model.js"></script>
+
   
 
   
