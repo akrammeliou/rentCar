@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="../css/simplify.min.css">
   <title>Simplify Admin</title>
 </head>
-<body>
+<body onload="afficheUser()">
   
 <div class="full-page">
   <div class="sidebar-container">
@@ -91,7 +91,7 @@
           </li>
   
           <li class="list-nav-item">
-              <a href="./basic.html" class="list-nav-link demo">
+              <a href="./basic.html"  class="list-nav-link demo">
                 <span class="list-nav-icon">
                   <i class="material-icons">widgets</i>
                 </span>
@@ -337,128 +337,30 @@
           <h5>Current user </h5>
         </div>
         <div class="card-body">
-          <table class="table table-middle">
-            <thead>
+          <table class="table table-middle" id="table">
+            <!-- <thead>
               <tr>
-            <th>User</th>
-                <th>Lead</th>
+            <th>Username</th>
+                <th>Email</th>
                 <th>Progress</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-
-
-                <td>
-                  Alexa Space AI
+                <td id="name">                
                 </td>
-                <td>
+                <td id="email">
                   <img src="http://via.placeholder.com/256x256" alt="" class="img-thumb-sm mr-3">
-                  Peter Stacy
-                </td>
+                 </td>
                 <td style="">
-                  <div class="progress progress-thin">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 85%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="py-1 px-1">
+                    <button class="btn btn-sm btn-flat-info btn-fab"><i class="material-icons">done</i></button>
+                    <button class="btn btn-sm btn-flat-secondary btn-fab"><i class="material-icons">clear</i></button>
                   </div>
                 </td>
               </tr>
-              <tr>
-
-
-                <td>
-                  Research and Dev
-                </td>
-                <td>
-                  <img src="http://via.placeholder.com/256x256" alt="" class="img-thumb-sm mr-3">
-                  Kenny Sewalk
-                </td>
-                <td style="">
-                  <div class="progress progress-thin">
-                    <div class="progress-bar bg-primary" role="progressbar" style="width: 55%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-
-
-                <td>
-                  Quality Control
-                </td>
-                <td>
-                  <img src="http://via.placeholder.com/256x256" alt="" class="img-thumb-sm mr-3">
-                  Joseph Dory
-                </td>
-                <td style="">
-                  <div class="progress progress-thin">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-
-
-                <td>
-                  Warp Drive
-                </td>
-                <td>
-                  <img src="http://via.placeholder.com/256x256" alt="" class="img-thumb-sm mr-3">
-                  Tiara Nemo
-                </td>
-                <td style="">
-                  <div class="progress progress-thin">
-                    <div class="progress-bar bg-info" role="progressbar" style="width: 35%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-
-
-                <td>
-                  Science and Tech
-                </td>
-                <td>
-                  <img src="http://via.placeholder.com/256x256" alt="" class="img-thumb-sm mr-3">
-                  Gilana Kubert
-                </td>
-                <td style="">
-                  <div class="progress progress-thin">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 65%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-
-
-                <td>
-                  Liberal Arts
-                </td>
-                <td>
-                  <img src="http://via.placeholder.com/256x256" alt="" class="img-thumb-sm mr-3">
-                  Teddy Jackson
-                </td>
-                <td style="">
-                  <div class="progress progress-thin">
-                    <div class="progress-bar bg-danger" role="progressbar" style="width: 15%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-
-
-                <td>
-                  Spece Creatures
-                </td>
-                <td>
-                  <img src="http://via.placeholder.com/256x256" alt="" class="img-thumb-sm mr-3">
-                  Leany Suzan
-                </td>
-                <td style="">
-                  <div class="progress progress-thin">
-                    <div class="progress-bar bg-warning" role="progressbar" style="width: 25%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
+              
+            </tbody> -->
           </table>
         </div>
       </div>
@@ -547,5 +449,6 @@
   <script src="../scripts/settings.min.js"></script>
   <script src="../scripts/card.min.js"></script>
   <script src="../scripts/simplify.min.js"></script>
+  <script src="../scripts/adminJS/add_mark.js"></script>
 </body>
 </html>

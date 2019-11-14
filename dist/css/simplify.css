@@ -17190,5 +17190,17 @@ table .fc-head .fc-widget-header td, table .fc-head .fc-widget-header th, table 
   font-family: Cookie, cursive;
   font-size: 2rem !important;
 }
-
+.btn_brands{
+  position: fixed;
+  top: 13%;
+  z-index: 999;
+  right: 35px;  
+}
+.btn-brand{
+  margin-left: 6%;
+  margin-top: 5%;
+}
+#brands, #model {
+  width:25%;
+}
 /*# sourceMappingURL=simplify.css.map */

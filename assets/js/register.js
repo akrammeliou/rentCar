@@ -19,5 +19,5 @@ function register() {
     tab.push(user);
     localStorage.setItem("user", JSON.stringify(tab));
     console.log(tab);
-    location.href = 'file:///C:/Users/Bach/Desktop/rentCar/car-listing.html'
+    location.href = 'file:///C:/Users/admin/Desktop/projet%20javascript/rentCar/car-listing.html'
 }
