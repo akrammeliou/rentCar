@@ -8,8 +8,8 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono%7CArvo:400%7CRoboto:300,400,500,700%7CCookie" rel="stylesheet">
   <link rel="stylesheet" href="../vendor/css/font-awesome.min.css">
   <link rel="stylesheet" href="../vendor/perfect-scrollbar.css">
-  
   <link rel="stylesheet" href="../css/simplify.min.css">
+  <link rel="stylesheet" href="../css/simplify.css">
   <title>Simplify Admin</title>
 </head>
 <body>
@@ -62,7 +62,7 @@
               <ul class="list-nav-child">
   
                   <li class="list-nav-item list-nav-child-item">
-                    <a href="./search.html" class="list-nav-link">
+                    <a href="../pages/search.html" class="list-nav-link">
                       <span class="list-nav-icon list-nav-icon-sm">
                         <i class="material-icons">keyboard_arrow_right</i>
                       </span>
@@ -71,7 +71,7 @@
                   </li>
   
                   <li class="list-nav-item list-nav-child-item">
-                    <a href="./addCars.html" class="list-nav-link">
+                    <a href="../pages/addCars.html" class="list-nav-link">
                       <span class="list-nav-icon list-nav-icon-sm">
                         <i class="material-icons">keyboard_arrow_right</i>
                       </span>
@@ -79,7 +79,7 @@
                     </a>
                   </li>
                   <li class="list-nav-item list-nav-child-item">
-                      <a href="../tables/brandsAll.html" class="list-nav-link">
+                      <a href="./brandsAll.html" class="list-nav-link">
                         <span class="list-nav-icon list-nav-icon-sm">
                           <i class="material-icons">keyboard_arrow_right</i>
                         </span>
@@ -99,7 +99,7 @@
               </a>
           </li>
           <li class="list-nav-item">
-              <a href="account.html" class="list-nav-link">
+              <a href="../pages/account.html" class="list-nav-link">
                 <span class="list-nav-icon">
                   <i class="material-icons">person</i>
                 </span>
@@ -124,7 +124,7 @@
         </button>
 
         <div class="navbar-text ml-3 d-none d-sm-block">
-          <h5 class="m-0 text-dark">Follow Cars</h5>
+          <h5 class="m-0 text-dark"> List Brands </h5>
         </div>
 
         <div class="ml-auto d-sm-flex">
@@ -327,171 +327,49 @@
     <div class="page-content">
       
 <div class="container-fluid">
+  <h5 class="section-title">
+  Brands  </h5>
+   <button class="btn btn-danger btn-fab btn_brands" onclick="addShow()" title="New Task"><i class="material-icons">add</i></button>
+
   <div class="row">
-    <div class="col-12 col-lg-12">
+    <div class="col-12" id="tableau">
       <div class="card">
-        <div class="card-body p-0">
-          <div class="search-box p-6 border-bottom">
-            <div class="input-group">
-            <input aria-describedby="searchaddon" aria-label="Search Field" class="form-control" value="John Doe" type="text">
-            <span class="input-group-addon bg-white" id="searchaddon"><i class="material-icons">search</i></span>
-          </div>
-
-          </div>
-          <div class="row no-gutters">
-            <div class="col-12 col-lg-8">
-    <h5 class="section-title">
- Cars
-    </h5>
-    <div class="row">
-      <div class="col-12">
-        <div class="card">
-          <div class="card-body">
-            <table class="table table-middle">
-              <thead>
-                <tr>
-              <th>Car</th>
-                  <th>Lead</th>
-                  <th>Progress</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-  
-  
-                  <td>
-                    Alexa Space AI
-                  </td>
-                  <td>
-                    <img src="http://via.placeholder.com/256x256" alt="" class="img-thumb-sm mr-3">
-                    Peter Stacy
-                  </td>
-                  <td>
-                    <div class="progress progress-thin">
-                      <div class="progress-bar bg-success" role="progressbar" style="width: 85%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-  
-  
-                  <td>
-                    Research and Dev
-                  </td>
-                  <td>
-                    <img src="http://via.placeholder.com/256x256" alt="" class="img-thumb-sm mr-3">
-                    Kenny Sewalk
-                  </td>
-                  <td>
-                    <div class="progress progress-thin">
-                      <div class="progress-bar bg-primary" role="progressbar" style="width: 55%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-  
-  
-                  <td>
-                    Quality Control
-                  </td>
-                  <td>
-                    <img src="http://via.placeholder.com/256x256" alt="" class="img-thumb-sm mr-3">
-                    Joseph Dory
-                  </td>
-                  <td>
-                    <div class="progress progress-thin">
-                      <div class="progress-bar bg-success" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-  
-  
-                  <td>
-                    Warp Drive
-                  </td>
-                  <td>
-                    <img src="http://via.placeholder.com/256x256" alt="" class="img-thumb-sm mr-3">
-                    Tiara Nemo
-                  </td>
-                  <td>
-                    <div class="progress progress-thin">
-                      <div class="progress-bar bg-info" role="progressbar" style="width: 35%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-  
-  
-                  <td>
-                    Science and Tech
-                  </td>
-                  <td>
-                    <img src="http://via.placeholder.com/256x256" alt="" class="img-thumb-sm mr-3">
-                    Gilana Kubert
-                  </td>
-                  <td>
-                    <div class="progress progress-thin">
-                      <div class="progress-bar bg-success" role="progressbar" style="width: 65%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-  
-  
-                  <td>
-                    Liberal Arts
-                  </td>
-                  <td>
-                    <img src="http://via.placeholder.com/256x256" alt="" class="img-thumb-sm mr-3">
-                    Teddy Jackson
-                  </td>
-                  <td>
-                    <div class="progress progress-thin">
-                      <div class="progress-bar bg-danger" role="progressbar" style="width: 15%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-  
-  
-                  <td>
-                    Spece Creatures
-                  </td>
-                  <td>
-                    <img src="http://via.placeholder.com/256x256" alt="" class="img-thumb-sm mr-3">
-                    Leany Suzan
-                  </td>
-                  <td>
-                    <div class="progress progress-thin">
-                      <div class="progress-bar bg-warning" role="progressbar" style="width: 25%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <div class="card-header">
+          <h5>Current Brands </h5>
+         
         </div>
-  
-      </div>
-    </div>
-  
-  </div>
-            </div>
-        
-          </div>
-
-
-
-
-
+        <div class="card-body">
+          <table class="table table-middle">
+            <thead>
+              <tr>
+            <th>Brand</th>
+              
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+               
+                </td>
+                <td style ="">
+                  
+                </td>
+              </tr>
+         
+            </tbody>
+          </table>
         </div>
       </div>
+     
+    </div>
+    <div class="col-12" id="brand" hidden>
+        <label>Brands</label><input type="text"  class="form-control" id="brands">
+        <label>Model</label><input type="text" class="form-control"  id="model">
+        <input type="button"  class="btn btn-primary mr-4 btn-brand"onclick=" addbrands()"value='add Brand'>
     </div>
   </div>
+
 </div>
-
-
 
     </div>
     <div class="sidebar-right-container">
@@ -559,24 +437,19 @@
     </div>
   </div>
 </div>
-
   <script src="../vendor/jquery.min.js"></script>
   <script src="../vendor/popper.min.js"></script>
   <script src="../vendor/bootstrap.min.js"></script>
   <script src="../vendor/perfect-scrollbar.min.js"></script>
-  
-<script src="../vendor/hammer.min.js"></script>
-<script src="../vendor/jquery-ui/jquery-ui.min.js"></script>
-<script src="../scripts/sidebar.min.js"></script>
-<script src="../scripts/collapsible-nav.min.js"></script>
-<script src="../vendor/color/color.min.js"></script>
-<script src="../scripts/colors.min.js"></script>
-<script src="../scripts/settings.min.js"></script>
-<script src="../scripts/card.min.js"></script>
-<script src="../scripts/simplify.min.js"></script>
-  
-
-  
-
+  <script src="../vendor/hammer.min.js"></script>
+  <script src="../vendor/jquery-ui/jquery-ui.min.js"></script>
+  <script src="../scripts/sidebar.min.js"></script>
+  <script src="../scripts/collapsible-nav.min.js"></script>
+  <script src="../vendor/color/color.min.js"></script>
+  <script src="../scripts/colors.min.js"></script>
+  <script src="../scripts/settings.min.js"></script>
+  <script src="../scripts/card.min.js"></script>
+  <script src="../scripts/simplify.min.js"></script>
+   <script src="../scripts/adminJS/add_mark.js"></script>
 </body>
 </html>

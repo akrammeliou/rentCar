@@ -11,7 +11,7 @@ function authentificationUser() {
             }
             else if (tab[i].role == 'admin'){
                 localStorage.setItem('connectedUser', JSON.stringify(tab[i]));
-                location.href = './dist/dashboard/index.html';
+                location.href = '../royalcars/dist/projects/all.html';
             }
             else{
                 alert('ERREUR CONNECT');
