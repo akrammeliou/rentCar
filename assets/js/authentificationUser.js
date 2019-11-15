@@ -7,7 +7,7 @@ function authentificationUser() {
         if (tab[i].email == email && tab[i].pass == passwordd ) {
             if(tab[i].role == 'user'){
                 localStorage.setItem('connectedUser', JSON.stringify(tab[i]));
-                location.href = 'car-listing.html';
+                location.href = 'login-register.html';
             }
             else if (tab[i].role == 'admin'){
                 localStorage.setItem('connectedUser', JSON.stringify(tab[i]));

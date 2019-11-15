@@ -6,8 +6,8 @@ function affichermarque() {
   for (let i = 0; i < todoList.length; i++) {
     if (todoList[i].owner == connectedUser.id) {
       marque += `
-            <option name="test" id="optiontest"  value="${todoList[i].id}">${todoList[i].marque}</option>
-            `
+        <option name="test" id="optiontest"  value="${todoList[i].id}">${todoList[i].marque}</option>
+        `
     }
   }
   marque += `</select>`;
@@ -19,7 +19,6 @@ function affichermodele() {
   var choice = select.selectedIndex;
   var id = select.options[choice].value;
   console.log("test" + id);
-
   console.log(localStorage.setItem("idmarque", JSON.stringify(id)));
   console.log(localStorage.getItem('idmarque'))
 
@@ -32,11 +31,9 @@ function affichermodele() {
       console.log(todoList[i]);
       let list = todoList[i].model
       for (let j = 0; j < list.length; j++) {
-
         modele += `
-                <option name="test" value="${list[j]}">${list[j]}</option>
-                `
-
+          <option name="test" value="${list[j]}">${list[j]}</option>
+          `
       }
     }
   }
@@ -55,13 +52,11 @@ function insertvoiture() {
     owner: connectedUser.id,
     modele: document.getElementById('modele').value,
     marquevoiture: id
-
   }
   tabvoiture.push(voituer);
   localStorage.setItem("voituer", JSON.stringify(tabvoiture));
   alert('done');
 }
-
 
 // function affichermarque() {
 //   let todoList = JSON.parse(localStorage.getItem('Brands')) || []

@@ -19,5 +19,5 @@ function register() {
     tab.push(user);
     localStorage.setItem("user", JSON.stringify(tab));
     console.log(tab);
-    location.href = '../car-listing.html'
+    location.href = './login-register.html'
 }
