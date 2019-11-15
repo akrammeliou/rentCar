@@ -13,7 +13,7 @@ function register() {
         username: username,
         pass: password,
         email: adressMail,
-        role:'user'
+        role:'admin'
     }
 
     tab.push(user);
