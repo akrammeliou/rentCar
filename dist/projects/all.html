@@ -1,6 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    
+function couteruser() {
+var nbUser=0
+var nbVoiture=0
+  var list = JSON.parse(localStorage.getItem('user')) || []
+    for (let i = 0; i < list.length; i++) {
+      if(list[i].role=='user'){
+        nbUser++;
+     }
+    }
+
+
+
+  var tabvoiture = JSON.parse(localStorage.getItem('voituer')) || [];
+  var connectedUser = JSON.parse(localStorage.getItem("connectedUser")) || [];
+  for (let j = 0; j < tabvoiture.length; j++) {
+    if (tabvoiture[j].id == connectedUser.id) {
+      nbVoiture++
+    }
+  }
+    document.getElementById('coutevoiture').innerHTML = nbVoiture
+    document.getElementById('couteuser').innerHTML = nbUser;
+}
+    
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -12,7 +38,7 @@
   <link rel="stylesheet" href="../css/simplify.min.css">
   <title>Simplify Admin</title>
 </head>
-<body>
+<body onload="couteruser()">
   
 <div class="full-page">
   <div class="sidebar-container">
@@ -357,7 +383,7 @@
           </div>
           <div class="media-body">
             <div class="text-center py-4 px-4">
-              <h3> 1222 </h3>
+              <h3> <div id="couteuser"></div></h3>
               <p class="my-0 text-secondary">Users</p>
             </div>
           </div>
@@ -376,7 +402,7 @@
           </div>
           <div class="media-body">
             <div class="text-center py-4 px-4">
-              <h3> 122 </h3>
+              <h3> <div id="coutevoiture"></div></h3>
               <p class="my-0 text-secondary">Cars</p>
             </div>
           </div>
