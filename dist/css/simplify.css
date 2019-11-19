@@ -17203,4 +17203,10 @@ table .fc-head .fc-widget-header td, table .fc-head .fc-widget-header th, table 
 #brands, #model {
   width:25%;
 }
+.disable{
+  background: red;
+}
+.disable2{
+  background: green;
+}
 /*# sourceMappingURL=simplify.css.map */
