@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-
-
-
-
-
-    <script>
+<script>
 function affichagevoitureAdmin() {
   let htmladmin=`<h1>`;
   let html = ` <table class="table table-middle">
@@ -19,22 +13,23 @@ function affichagevoitureAdmin() {
     </tr>
   </thead> <tbody>`
 
-
-
-
   var tab = JSON.parse(localStorage.getItem("user")) || [];
   var tabvoiture = JSON.parse(localStorage.getItem('voituer')) || [];
   var connectedUser = JSON.parse(localStorage.getItem("connectedUser")) || [];
   for (let i = 0; i < tab.length; i++) {
     if (tab[i].id == connectedUser.id) {
       
-      htmladmin+=`les voiture d l admin M '${connectedUser.username}`;
+      htmladmin+=`les voiture de l'admin est ${connectedUser.username}`;
       for (let j = 0; j < tabvoiture.length; j++) {
         console.log('bach voiture ' + tabvoiture[j].marquevoiture);
         html += `<tr>
             <td>${tabvoiture[j].matricule}</td>
             <td>${tabvoiture[j].marquevoiture}</td>
             <td>${tabvoiture[j].modele}</td>
+            <td>
+              <input type="button" value="Edit" id="edit" onclick="edit_cars(${tabvoiture[j].id})">
+              <input type="button" value="Delete" id="delete" onclick="delete_cars(${tabvoiture[j].id})">
+            </td>
             </tr>`
       }
     }
@@ -44,7 +39,35 @@ function affichagevoitureAdmin() {
   document.getElementById('tabvoiture').innerHTML = html
   document.getElementById('admintitle').innerHTML=htmladmin;
 }
-
+function delete_cars(id) {
+  console.log(id);
+  
+  var tabvoiture = JSON.parse(localStorage.getItem('voituer')) || [];
+    for (let j = 0; j < tabvoiture.length; j++) {
+      if (tabvoiture[j].id === id) {
+        tabvoiture.splice(j, 1);
+      }
+    }
+  localStorage.setItem("voituer", JSON.stringify(tabvoiture));
+  affichagevoitureAdmin()
+}
+// function edit_cars(id) {
+//   console.log(id);
+//   let tabvoiture = JSON.parse(localStorage.getItem('voituer')) || []
+//     editvoiture = {
+//         id: id,
+//         matricule: document.getElementById('matricule').value,
+//         marquevoiture: document.getElementById('mark').value,
+//         modele:document.getElementById('modele').value
+//     }
+//     for (let j = 0; j < tabvoiture.length; j++) {
+//         if (tabvoiture[j].id === id) {
+//             tabvoiture.splice(j, 1, editvoiture);
+//         }
+//     }
+//     localStorage.setItem("voituer", JSON.stringify(tabvoiture));
+//     affichagevoitureAdmin();
+// }
 </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
