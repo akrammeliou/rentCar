@@ -32,6 +32,7 @@ function afficheUser() {
   <tbody>`
   var list = JSON.parse(localStorage.getItem('user')) || []
     for (let i = 0; i < list.length; i++) {
+      if(list[i].role=='user'){
         html += `<tr>
         <td id="name">  
         ${list[i].username}              
@@ -42,11 +43,12 @@ function afficheUser() {
           </td>
         <td style="">
           <div class="py-1 px-1">
-            <button class="btn btn-sm btn-flat-info btn-fab"><i class="material-icons">done</i></button>
-            <button class="btn btn-sm btn-flat-secondary btn-fab"><i class="material-icons">clear</i></button>
+            <button class="btn btn-sm btn-flat-info btn-fab ${status=='inactif' ? 'inactif' : 'actif'}"><i class="material-icons">done</i></button>
+            <button class="btn btn-sm btn-flat-secondary btn-fab ${status=='actif' ? 'actif' : 'inactif'} "><i class="material-icons">clear</i></button>
           </div>
         </td>
       </tr>`
+    }
     }
     document.getElementById('table').innerHTML = html;
 }

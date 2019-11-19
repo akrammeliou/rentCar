@@ -44,6 +44,7 @@ function affichermodele() {
   
 
 }
+
 function insertvoiture() {
   var tabvoiture = JSON.parse(localStorage.getItem('voituer')) || [];
   let todoList = JSON.parse(localStorage.getItem('Brands')) || []
@@ -63,7 +64,7 @@ function insertvoiture() {
     owner: connectedUser.id,
     modele: modelle,
     marquevoiture:id,
-
+    id: Math.floor(Math.random() * 1000 + 1),
   }
   tabvoiture.push(voituer);
   localStorage.setItem("voituer", JSON.stringify(tabvoiture));
