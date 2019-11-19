@@ -6,8 +6,10 @@ function authentificationUser() {
     for (let i = 0; i < tab.length; i++) {
         if (tab[i].email == email && tab[i].pass == passwordd ) {
             if(tab[i].role == 'user'){
-                localStorage.setItem('connectedUser', JSON.stringify(tab[i]));
-                location.href = 'login-register.html';
+                if(tab[i].status == 'actif'){
+                    localStorage.setItem('connectedUser', JSON.stringify(tab[i]));
+                    location.href = '../royalcars/dist/projects/all.html';
+                }
             }
             else if (tab[i].role == 'admin'){
                 localStorage.setItem('connectedUser', JSON.stringify(tab[i]));
