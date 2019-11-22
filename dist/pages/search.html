@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <style>
+
+  </style>
 <script>
 function affichagevoitureAdmin() {
-  let htmladmin=`<h1>`;
+  let htmladmin =`<h1>`;
   let html = ` <table class="table table-middle">
   <thead>
     <tr>
@@ -26,8 +29,8 @@ function affichagevoitureAdmin() {
             <td>${tabvoiture[j].marquevoiture}</td>
             <td>${tabvoiture[j].modele}</td>
             <td>
-              <input type="button" value="Edit" id="edit" onclick="edit_cars(${tabvoiture[j].id})">
-              <input type="button" value="Delete" id="delete" onclick="delete_cars(${tabvoiture[j].id})">
+              <input type="button" class="btn btn-primary" value="Edit" id="edit" onclick="ediiiit(${tabvoiture[j].id})">
+              <input type="button" class="btn btn-secondary" value="Delete" id="delete" onclick="delete_cars(${tabvoiture[j].id})">
             </td>
             </tr>`
       }
@@ -38,9 +41,28 @@ function affichagevoitureAdmin() {
   document.getElementById('tabvoiture').innerHTML = html
   document.getElementById('admintitle').innerHTML=htmladmin;
 }
-function delete_cars(id) {
-  console.log(id);
-  
+function ediiiit(id) {
+  var tabvoiture = JSON.parse(localStorage.getItem('voituer')) || [];
+  let index 
+    for (let i = 0; i < tabvoiture.length; i++) {
+        if (id == tabvoiture[i].id) {
+          index = i
+        }
+    }
+  let htmledit =`
+  <table id="edittt">
+      <tr>
+        <td><input type="texte" class="form-control" id="matricule_edit" value="${tabvoiture[index].matricule}"></td>
+        <td><input type="texte" class="form-control" id="mark_edit" value="${tabvoiture[index].marquevoiture}"></td>
+        <td><input type="texte" class="form-control" id="modele_edit" value="${tabvoiture[index].modele}"></td>
+        <td>
+          <input type="button" class="btn btn-primary" value="Edit" id="ediiit" onclick="modif(${tabvoiture[index].id})">
+        </td>
+      </tr>
+  </table>`
+  document.getElementById('editform').innerHTML = htmledit
+}
+function delete_cars(id) {  
   var tabvoiture = JSON.parse(localStorage.getItem('voituer')) || [];
     for (let j = 0; j < tabvoiture.length; j++) {
       if (tabvoiture[j].id === id) {
@@ -50,25 +72,34 @@ function delete_cars(id) {
   localStorage.setItem("voituer", JSON.stringify(tabvoiture));
   affichagevoitureAdmin()
 }
-// function edit_cars(id) {
-//   console.log(id);
-//   let tabvoiture = JSON.parse(localStorage.getItem('voituer')) || []
-//     editvoiture = {
-//         id: id,
-//         matricule: document.getElementById('matricule').value,
-//         marquevoiture: document.getElementById('mark').value,
-//         modele:document.getElementById('modele').value
-//     }
-//     for (let j = 0; j < tabvoiture.length; j++) {
-//         if (tabvoiture[j].id === id) {
-//             tabvoiture.splice(j, 1, editvoiture);
-//         }
-//     }
-//     localStorage.setItem("voituer", JSON.stringify(tabvoiture));
-//     affichagevoitureAdmin();
-// }
+
+function modif(id) {
+    let tabvoiture = JSON.parse(localStorage.getItem('voituer')) || [];
+    var connectedUser = JSON.parse(localStorage.getItem("connectedUser")) || [];
+
+    todo = {
+        id: id,
+        owner: JSON.parse(localStorage.getItem('connectedUser')).id,
+        matricule: document.getElementById('matricule_edit').value,
+        marquevoiture: document.getElementById('mark_edit').value,
+        modele: document.getElementById('modele_edit').value
+    }
+
+    for (let i = 0; i < tabvoiture.length; i++) {
+        if (tabvoiture[i].id === id) {
+          tabvoiture.splice(i, 1, todo);
+        }
+    }
+    localStorage.setItem("voituer", JSON.stringify(tabvoiture));
+    affichagevoitureAdmin();
+    load()
+}
+function load() {
+    window.location.reload()
+}
 </script>
-  <meta charset="UTF-8">
+
+<meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico">
@@ -406,7 +437,7 @@ function delete_cars(id) {
 
           </div>
           <div class="row no-gutters">
-            <div class="col-12 col-lg-8">
+            <div class="col-12 col-lg-10">
     <h5 class="section-title">
       <div id="admintitle">
 
@@ -417,6 +448,10 @@ function delete_cars(id) {
       <div class="col-12">
         <div class="card">
           <div class="card-body">
+              <div id="editform">
+
+
+                </div>
               <div id="tabvoiture">
 
 
