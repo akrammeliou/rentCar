@@ -13,12 +13,16 @@ function register() {
         username: username,
         pass: password,
         email: adressMail,
-        role:'user',
-        status:'inactif'
+        role:'user'
     }
 
     tab.push(user);
     localStorage.setItem("user", JSON.stringify(tab));
     console.log(tab);
-    location.href = './login-register.html'
+    if (user.role = 'user') {
+        location.href = './login-register.html'
+    }
+    else if (user.role = 'admin') {
+        location.href = './all.html'
+    }
 }
