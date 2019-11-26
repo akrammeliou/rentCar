@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <style>
+  input[type="file"] {
+      z-index: 10000000000;
+      position: relative;
+  }
+  </style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -346,6 +352,7 @@
                     <div class="image-with-text ">
                       <div class="image">
                         <img src="http://via.placeholder.com/256x256" alt="" class="img-fluid">
+                        <input type="file" id="filename" name="filename" accept="image/gif, image/jpeg, image/png">
                       </div>
                       <div class="image-text">
                         <h5 class="text-white">Change Photo</h5>
