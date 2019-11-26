@@ -5,7 +5,9 @@
 
 <head>
   <style>
-
+.hide {
+    display: none;
+}
   </style>
   <script>
     function affichagevoitureUser() {
@@ -27,6 +29,7 @@
                   <span id="iddate${tabvoiture[j].id}"></span>
                   <span id="iddatefine${tabvoiture[j].id}"></span>
                   <button id="stylebutton${tabvoiture[j].id}" onclick="dateverif(${tabvoiture[j].id})">resrve</button>
+                  <button id="annuler${tabvoiture[j].id}" class="hide" onclick="annuler(${tabvoiture[j].id})">annuler reservation</button>
                 </div>
               </div> 
             </li>`
@@ -93,10 +96,19 @@
 
     }
 
-   
+   function annuler (i) {
+    var reservation = JSON.parse(localStorage.getItem('reservation')) || [];
+    for (let j = 0; j < reservation.length; j++) {
+      if (reservation[j].idvoiture === i) {
+        reservation.splice(j, 1);
+      }
+    }
+    localStorage.setItem("reservation", JSON.stringify(reservation));
+    lod()
+   }
 
     function test() {
-     
+      
       var tabres = JSON.parse(localStorage.getItem('reservation')) || []
       var tabvoiture = JSON.parse(localStorage.getItem('voituer')) || [];
       for (let j = 0; j < tabvoiture.length; j++) {
@@ -104,6 +116,7 @@
           if (tabres[t].idvoiture == tabvoiture[j].id) {
             document.getElementById('test3' + tabvoiture[j].id).style.display = 'none';
             document.getElementById('stylebutton' + tabvoiture[j].id).style.backgroundColor = "red";
+            document.getElementById('annuler' + tabvoiture[j].id).style.display = "block";
 
           }
         }
