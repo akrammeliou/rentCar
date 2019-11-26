@@ -4,36 +4,111 @@
 <!-- Mirrored from jthemes.org/html/royalcars/gallery.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 31 Oct 2019 18:16:05 GMT -->
 
 <head>
-<style>
+  <style>
 
-</style>
+  </style>
   <script>
     function affichagevoitureUser() {
       let html = ` <div class="container clearfix"> <ul>`
       var tabvoiture = JSON.parse(localStorage.getItem('voituer')) || [];
-        for (let j = 0; j < tabvoiture.length; j++) {
-          html += `<li>
-            
-            <img src="assets/images/gallery-img08.jpg" class="d-block img-fluid" alt="">
-            <div class="gallery-hover">
-              <div class="gallery-text">
-                <span><h5>Matricule Voiture :</h5>${tabvoiture[j].matricule}</span>
-                <h5>Marque Voiture :</h5>${tabvoiture[j].marquevoiture}</h5></td>
-                <h5>Model Voiture : </h5>${tabvoiture[j].modele}</td>
-                <button onclick="idVoiture(${tabvoiture[j].id})">Reserve</button>
-                <span id="iddate${tabvoiture[j].id}"></span>
-              </div>
-            </div> 
-          </li>`
-        }
+
+
+          
+          for (let j = 0; j < tabvoiture.length; j++) {
+            html += `<li>
+              
+              <img src="assets/images/gallery-img08.jpg" class="d-block img-fluid" alt="">
+              <div class="gallery-hover">
+                <div class="gallery-text">
+                  <span><h5>Matricule Voiture :</h5>${tabvoiture[j].matricule}</span>
+                  <h5>Marque Voiture :</h5>${tabvoiture[j].marquevoiture}</h5></td>
+                  <h5>Model Voiture : </h5>${tabvoiture[j].modele}</td>
+                  <button id="test3${tabvoiture[j].id}" onclick="idVoiture(${tabvoiture[j].id})">Date de reservation</button>
+                  <span id="iddate${tabvoiture[j].id}"></span>
+                  <span id="iddatefine${tabvoiture[j].id}"></span>
+                  <button id="stylebutton${tabvoiture[j].id}" onclick="dateverif(${tabvoiture[j].id})">resrve</button>
+                </div>
+              </div> 
+            </li>`
+          }
+        
       html += `</ul> </div></div>`;
       document.getElementById('r-gallery-parta').innerHTML = html;
     }
-function idVoiture (i){
-  console.log(i);
-  var html = `Date<input type="date">`;
-  document.getElementById('iddate'+i).innerHTML = html;
-}
+    function idVoiture(i) {
+
+      console.log(i);
+      var html = `Date<input type="date" id="s"> `;
+      var html2 = `Date<input type="date" id="s2"> `;
+      document.getElementById('iddate' + i).innerHTML = html;
+      document.getElementById('iddatefine' + i).innerHTML = html2;
+      x = document.getElementById('s').value;
+    }
+
+    function lod() {
+      window.location.reload()
+    }
+
+    function dateverif(i) {
+      lod()
+      var connectedUser = JSON.parse(localStorage.getItem("connectedUser")) || [];
+      console.log('test' + i);
+      x = document.getElementById('s').value;
+      y = document.getElementById('s2').value;
+      var today = new Date();
+      console.log(x);
+      var tabres = JSON.parse(localStorage.getItem('reservation')) || [];
+      console.log(i);
+      if ((today - new Date(x)) < 0) {
+     
+    
+    
+      var reservation = {
+        dateresrvationdebut: x,
+        dateresrvationfin: y,
+        idvoiture: i,
+        owner: connectedUser.id,
+        reserved: 1
+      }
+
+      tabres.push(reservation);
+      localStorage.setItem("reservation", JSON.stringify(tabres));
+    }
+
+    else {
+        alert('date non valid');
+    }
+
+      // console.log('hello');
+
+
+      // for (let j = 0; j < tabvoiture.length; j++) {
+      //   for (let t = 0; t < tabres.length; t++) {
+      //     if (tabres[t].idvoiture == tabvoiture[j].marquevoiture) {
+      //       document.getElementById('test3' + tabvoiture[j].marquevoiture).style.display = 'none';
+
+      //     }
+      //   }
+      // }
+
+    }
+
+   
+
+    function test() {
+     
+      var tabres = JSON.parse(localStorage.getItem('reservation')) || []
+      var tabvoiture = JSON.parse(localStorage.getItem('voituer')) || [];
+      for (let j = 0; j < tabvoiture.length; j++) {
+        for (let t = 0; t < tabres.length; t++) {
+          if (tabres[t].idvoiture == tabvoiture[j].id) {
+            document.getElementById('test3' + tabvoiture[j].id).style.display = 'none';
+            document.getElementById('stylebutton' + tabvoiture[j].id).style.backgroundColor = "red";
+
+          }
+        }
+      }
+    }
   </script>
 
 
@@ -81,7 +156,7 @@ function idVoiture (i){
 
 </head>
 
-<body onload="affichagevoitureUser()">
+<body onload="affichagevoitureUser();test()">
   <section id="r-customizer" class="r-customizer">
     <div class="r-selector">
       <span class="d-block text-center">Color</span>

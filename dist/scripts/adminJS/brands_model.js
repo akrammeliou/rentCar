@@ -65,6 +65,7 @@ function insertvoiture() {
     modele: modelle,
     marquevoiture:id,
     id: Math.floor(Math.random() * 1000 + 1),
+    image:document.getElementById('filename').value
   }
   tabvoiture.push(voituer);
   localStorage.setItem("voituer", JSON.stringify(tabvoiture));

@@ -17,6 +17,8 @@ function affichagevoitureAdmin() {
   </thead> <tbody>`
   var tab = JSON.parse(localStorage.getItem("user")) || [];
   var tabvoiture = JSON.parse(localStorage.getItem('voituer')) || [];
+  
+  console.log(tabvoiture.map(voiture => voiture.id).indexOf(154))
   var connectedUser = JSON.parse(localStorage.getItem("connectedUser")) || [];
   for (let i = 0; i < tab.length; i++) {
     if (tab[i].id == connectedUser.id) {
