@@ -1,118 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <style>
-
-  </style>
-<script>
-function affichagevoitureAdmin() {
-  let htmladmin =`<h1>`;
-  let html = ` <table class="table table-middle">
-  <thead>
-    <tr>
-  <th><h1>matricule</h1></th>
-      <th><h1>Marque</h1></th>
-      <th><h1>Modele</h1></th>
-    </tr>
-  </thead> <tbody>`
-  var tab = JSON.parse(localStorage.getItem("user")) || [];
-  var tabvoiture = JSON.parse(localStorage.getItem('voituer')) || [];
-  
-  console.log(tabvoiture.map(voiture => voiture.id).indexOf(154))
-  var connectedUser = JSON.parse(localStorage.getItem("connectedUser")) || [];
-  for (let i = 0; i < tab.length; i++) {
-    if (tab[i].id == connectedUser.id) {
-      
-      htmladmin+=`les voiture de l'admin est ${connectedUser.username}`;
-      for (let j = 0; j < tabvoiture.length; j++) {
-        console.log('bach voiture ' + tabvoiture[j].marquevoiture);
-        html += `<tr>
-            <td>${tabvoiture[j].matricule}</td>
-            <td>${tabvoiture[j].marquevoiture}</td>
-            <td>${tabvoiture[j].modele}</td>
-            <td>
-              <input type="button" class="btn btn-primary" value="Edit" id="edit" onclick="ediiiit(${tabvoiture[j].id})">
-              <input type="button" class="btn btn-secondary" value="Delete" id="delete" onclick="delete_cars(${tabvoiture[j].id})">
-            </td>
-            </tr>`
-      }
-    }
-  }
-  htmladmin+=`</h1>`
-  html+=`</tbody> </table>`;
-  document.getElementById('tabvoiture').innerHTML = html
-  document.getElementById('admintitle').innerHTML=htmladmin;
-}
-function ediiiit(id) {
-  var tabvoiture = JSON.parse(localStorage.getItem('voituer')) || [];
-  let index 
-    for (let i = 0; i < tabvoiture.length; i++) {
-        if (id == tabvoiture[i].id) {
-          index = i
-        }
-    }
-  let htmledit =`
-  <table id="edittt">
-      <tr>
-        <td><input type="texte" class="form-control" id="matricule_edit" value="${tabvoiture[index].matricule}"></td>
-        <td><input type="texte" class="form-control" id="mark_edit" value="${tabvoiture[index].marquevoiture}"></td>
-        <td><input type="texte" class="form-control" id="modele_edit" value="${tabvoiture[index].modele}"></td>
-        <td>
-          <input type="button" class="btn btn-primary" value="Edit" id="ediiit" onclick="modif(${tabvoiture[index].id})">
-        </td>
-      </tr>
-  </table>`
-  document.getElementById('editform').innerHTML = htmledit
-}
-function delete_cars(id) {  
-  var tabvoiture = JSON.parse(localStorage.getItem('voituer')) || [];
-    for (let j = 0; j < tabvoiture.length; j++) {
-      if (tabvoiture[j].id === id) {
-        tabvoiture.splice(j, 1);
-      }
-    }
-  localStorage.setItem("voituer", JSON.stringify(tabvoiture));
-  affichagevoitureAdmin()
-}
-
-function modif(id) {
-    let tabvoiture = JSON.parse(localStorage.getItem('voituer')) || [];
-    var connectedUser = JSON.parse(localStorage.getItem("connectedUser")) || [];
-
-    todo = {
-        id: id,
-        owner: JSON.parse(localStorage.getItem('connectedUser')).id,
-        matricule: document.getElementById('matricule_edit').value,
-        marquevoiture: document.getElementById('mark_edit').value,
-        modele: document.getElementById('modele_edit').value
-    }
-
-    for (let i = 0; i < tabvoiture.length; i++) {
-        if (tabvoiture[i].id === id) {
-          tabvoiture.splice(i, 1, todo);
-        }
-    }
-    localStorage.setItem("voituer", JSON.stringify(tabvoiture));
-    affichagevoitureAdmin();
-    load()
-}
-function load() {
-    window.location.reload()
-}
-</script>
-
-<meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono%7CArvo:400%7CRoboto:300,400,500,700%7CCookie" rel="stylesheet">
   <link rel="stylesheet" href="../vendor/css/font-awesome.min.css">
   <link rel="stylesheet" href="../vendor/perfect-scrollbar.css">
-  
+
   <link rel="stylesheet" href="../css/simplify.min.css">
   <title>Simplify Admin</title>
 </head>
-<body onload="affichagevoitureAdmin()">
+<body onload="afficheUser()">
   
 <div class="full-page">
   <div class="sidebar-container">
@@ -139,7 +39,7 @@ function load() {
   
           <li class="list-nav-item">
   
-              <a href="../projects/all.html" class="list-nav-link">
+              <a href="../projects/Home.html" class="list-nav-link">
                 <span class="list-nav-icon">
                   <i class="material-icons">home</i>
                 </span>
@@ -162,16 +62,16 @@ function load() {
               <ul class="list-nav-child">
   
                   <li class="list-nav-item list-nav-child-item">
-                    <a href="./search.html" class="list-nav-link">
+                    <a href="../pages/List_Cars.html" class="list-nav-link">
                       <span class="list-nav-icon list-nav-icon-sm">
                         <i class="material-icons">keyboard_arrow_right</i>
                       </span>
-                      <span class="list-nav-label">Follow Cars</span>
+                      <span class="list-nav-label">List_Cars</span>
                     </a>
                   </li>
   
                   <li class="list-nav-item list-nav-child-item">
-                    <a href="./addCars.html" class="list-nav-link">
+                    <a href="../pages/addCars.html" class="list-nav-link">
                       <span class="list-nav-icon list-nav-icon-sm">
                         <i class="material-icons">keyboard_arrow_right</i>
                       </span>
@@ -191,7 +91,7 @@ function load() {
           </li>
   
           <li class="list-nav-item">
-              <a href="../tables/basic.html" class="list-nav-link demo">
+              <a href="./List_user.html"  class="list-nav-link demo">
                 <span class="list-nav-icon">
                   <i class="material-icons">widgets</i>
                 </span>
@@ -199,11 +99,11 @@ function load() {
               </a>
           </li>
           <li class="list-nav-item">
-              <a href="account.html" class="list-nav-link">
+              <a href="../pages/account.html" class="list-nav-link">
                 <span class="list-nav-icon">
                   <i class="material-icons">person</i>
                 </span>
-                <span class="list-nav-label">User Profile</span>
+              <span class="list-nav-label">Admin Profile</span>
               </a>
           </li>
          
@@ -224,7 +124,7 @@ function load() {
         </button>
 
         <div class="navbar-text ml-3 d-none d-sm-block">
-          <h5 class="m-0 text-dark">Follow Cars</h5>
+          <h5 class="m-0 text-dark"> List Users </h5>
         </div>
 
         <div class="ml-auto d-sm-flex">
@@ -427,62 +327,48 @@ function load() {
     <div class="page-content">
       
 <div class="container-fluid">
+  <h5 class="section-title">
+    Users
+  </h5>
   <div class="row">
-    <div class="col-12 col-lg-12">
+    <div class="col-12">
       <div class="card">
-        <div class="card-body p-0">
-          <div class="search-box p-6 border-bottom">
-            <div class="input-group">
-            <input aria-describedby="searchaddon" aria-label="Search Field" class="form-control" value="John Doe" type="text">
-            <span class="input-group-addon bg-white" id="searchaddon"><i class="material-icons">search</i></span>
-          </div>
-
-          </div>
-          <div class="row no-gutters">
-            <div class="col-12 col-lg-10">
-    <h5 class="section-title">
-      <div id="admintitle">
-
-
-      </div>
-    </h5>
-    <div class="row">
-      <div class="col-12">
-        <div class="card">
-          <div class="card-body">
-              <div id="editform">
-
-
-                </div>
-              <div id="tabvoiture">
-
-
-              </div>
-
-
-            
-          </div>
+        <div class="card-header">
+          <h5>Current user </h5>
         </div>
-  
-      </div>
-    </div>
-  
-  </div>
-            </div>
-        
-          </div>
-
-
-
-
-
+        <div class="card-body">
+          <table class="table table-middle" id="table">
+            <!-- <thead>
+              <tr>
+            <th>Username</th>
+                <th>Email</th>
+                <th>Progress</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td id="name">                
+                </td>
+                <td id="email">
+                  <img src="http://via.placeholder.com/256x256" alt="" class="img-thumb-sm mr-3">
+                 </td>
+                <td style="">
+                  <div class="py-1 px-1">
+                    <button class="btn btn-sm btn-flat-info btn-fab"><i class="material-icons">done</i></button>
+                    <button class="btn btn-sm btn-flat-secondary btn-fab"><i class="material-icons">clear</i></button>
+                  </div>
+                </td>
+              </tr>
+              
+            </tbody> -->
+          </table>
         </div>
       </div>
+
     </div>
   </div>
+
 </div>
-
-
 
     </div>
     <div class="sidebar-right-container">
@@ -550,24 +436,19 @@ function load() {
     </div>
   </div>
 </div>
-
   <script src="../vendor/jquery.min.js"></script>
   <script src="../vendor/popper.min.js"></script>
   <script src="../vendor/bootstrap.min.js"></script>
   <script src="../vendor/perfect-scrollbar.min.js"></script>
-  
-<script src="../vendor/hammer.min.js"></script>
-<script src="../vendor/jquery-ui/jquery-ui.min.js"></script>
-<script src="../scripts/sidebar.min.js"></script>
-<script src="../scripts/collapsible-nav.min.js"></script>
-<script src="../vendor/color/color.min.js"></script>
-<script src="../scripts/colors.min.js"></script>
-<script src="../scripts/settings.min.js"></script>
-<script src="../scripts/card.min.js"></script>
-<script src="../scripts/simplify.min.js"></script>
-  
-
-  
-
+  <script src="../vendor/hammer.min.js"></script>
+  <script src="../vendor/jquery-ui/jquery-ui.min.js"></script>
+  <script src="../scripts/sidebar.min.js"></script>
+  <script src="../scripts/collapsible-nav.min.js"></script>
+  <script src="../vendor/color/color.min.js"></script>
+  <script src="../scripts/colors.min.js"></script>
+  <script src="../scripts/settings.min.js"></script>
+  <script src="../scripts/card.min.js"></script>
+  <script src="../scripts/simplify.min.js"></script>
+  <script src="../scripts/adminJS/list_user.js"></script>
 </body>
 </html>

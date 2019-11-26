@@ -1,6 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    
+function couteruser() {
+var nbUser=0
+var nbVoiture=0
+  var list = JSON.parse(localStorage.getItem('user')) || []
+    for (let i = 0; i < list.length; i++) {
+      if(list[i].role=='user'){
+        nbUser++;
+     }
+    }
+
+
+
+  var tabvoiture = JSON.parse(localStorage.getItem('voituer')) || [];
+  var connectedUser = JSON.parse(localStorage.getItem("connectedUser")) || [];
+  for (let j = 0; j < tabvoiture.length; j++) {
+    if (tabvoiture[j].id == connectedUser.id) {
+      nbVoiture++
+    }
+  }
+    document.getElementById('coutevoiture').innerHTML = nbVoiture
+    document.getElementById('couteuser').innerHTML = nbUser;
+}
+    
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -8,11 +34,11 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono%7CArvo:400%7CRoboto:300,400,500,700%7CCookie" rel="stylesheet">
   <link rel="stylesheet" href="../vendor/css/font-awesome.min.css">
   <link rel="stylesheet" href="../vendor/perfect-scrollbar.css">
-
+  
   <link rel="stylesheet" href="../css/simplify.min.css">
   <title>Simplify Admin</title>
 </head>
-<body onload="afficheUser()">
+<body onload="couteruser()">
   
 <div class="full-page">
   <div class="sidebar-container">
@@ -39,7 +65,7 @@
   
           <li class="list-nav-item">
   
-              <a href="../projects/all.html" class="list-nav-link">
+              <a href="./Home.html" class="list-nav-link">
                 <span class="list-nav-icon">
                   <i class="material-icons">home</i>
                 </span>
@@ -62,11 +88,11 @@
               <ul class="list-nav-child">
   
                   <li class="list-nav-item list-nav-child-item">
-                    <a href="../pages/search.html" class="list-nav-link">
+                    <a href="../pages/List_Cars.html" class="list-nav-link">
                       <span class="list-nav-icon list-nav-icon-sm">
                         <i class="material-icons">keyboard_arrow_right</i>
                       </span>
-                      <span class="list-nav-label">Follow Cars</span>
+                      <span class="list-nav-label">List_Cars</span>
                     </a>
                   </li>
   
@@ -91,7 +117,7 @@
           </li>
   
           <li class="list-nav-item">
-              <a href="./basic.html"  class="list-nav-link demo">
+              <a href="../tables/List_user.html" class="list-nav-link demo">
                 <span class="list-nav-icon">
                   <i class="material-icons">widgets</i>
                 </span>
@@ -103,7 +129,7 @@
                 <span class="list-nav-icon">
                   <i class="material-icons">person</i>
                 </span>
-                <span class="list-nav-label">User Profile</span>
+                <span class="list-nav-label">Admin Profile</span>
               </a>
           </li>
          
@@ -124,7 +150,7 @@
         </button>
 
         <div class="navbar-text ml-3 d-none d-sm-block">
-          <h5 class="m-0 text-dark"> List Users </h5>
+          <h5 class="m-0 text-dark"> Home </h5>
         </div>
 
         <div class="ml-auto d-sm-flex">
@@ -303,7 +329,7 @@
                 </ul>
               </div>
             </li>
-            
+
             <li class="nav-item dropdown no-caret ml-4" >
               <a class="text-xs nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <img src="http://via.placeholder.com/256x256" class="img-thumb-xs mr-1 align-middle"  alt="">
@@ -325,49 +351,309 @@
 
     </div>
     <div class="page-content">
-      
 <div class="container-fluid">
-  <h5 class="section-title">
-    Users
-  </h5>
   <div class="row">
-    <div class="col-12">
+    <div class="col-lg-4 col-12">
       <div class="card">
-        <div class="card-header">
-          <h5>Current user </h5>
-        </div>
-        <div class="card-body">
-          <table class="table table-middle" id="table">
-            <!-- <thead>
-              <tr>
-            <th>Username</th>
-                <th>Email</th>
-                <th>Progress</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td id="name">                
-                </td>
-                <td id="email">
-                  <img src="http://via.placeholder.com/256x256" alt="" class="img-thumb-sm mr-3">
-                 </td>
-                <td style="">
-                  <div class="py-1 px-1">
-                    <button class="btn btn-sm btn-flat-info btn-fab"><i class="material-icons">done</i></button>
-                    <button class="btn btn-sm btn-flat-secondary btn-fab"><i class="material-icons">clear</i></button>
-                  </div>
-                </td>
-              </tr>
-              
-            </tbody> -->
-          </table>
-        </div>
-      </div>
+        <div class="d-flex">
+          <div class="px-4 bg-light d-flex align-items-center border-right">
+            <div class="px-3 text-info text-size-7">
+              <i class="material-icons">mail</i>
+            </div>
 
+          </div>
+          <div class="media-body">
+            <div class="text-center py-4 px-4">
+              <h3> 22 </h3>
+              <p class="my-0 text-secondary">Running Projects</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-lg-4 col-12">
+      <div class="card">
+        <div class="d-flex">
+          <div class="px-4 bg-light d-flex align-items-center" style="border-right: 1px solid #eee">
+            <div class="px-3 text-success text-size-7">
+              <i class="material-icons">group</i>
+            </div>
+
+          </div>
+          <div class="media-body">
+            <div class="text-center py-4 px-4">
+              <h3> <div id="couteuser"></div></h3>
+              <p class="my-0 text-secondary">Users</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-lg-4 col-12">
+      <div class="card">
+        <div class="d-flex">
+          <div class="px-4 bg-light d-flex align-items-center" style="border-right: 1px solid #eee">
+            <div class="px-3 text-primary text-size-7">
+              <i class="material-icons">group_work</i>
+            </div>
+
+          </div>
+          <div class="media-body">
+            <div class="text-center py-4 px-4">
+              <h3> <div id="coutevoiture"></div></h3>
+              <p class="my-0 text-secondary">Cars</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 
+  <div class="row">
+    <div class="col-12">
+      <div class="d-flex justify-content-between align-items-center">
+        <h5 class="section-title">
+          Projects
+
+        </h5>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h5>All Projects</h5>
+        </div>
+        <div class="card-body px-0">
+          <table class="table table-middle table-material rt-md">
+            <thead class="rt-table-hide">
+              <tr>
+
+                <th>
+                  Project Title
+                </th>
+                <th>
+                  Due Date
+                </th>
+
+
+                <th>
+                  Lead
+                </th>
+                <th>
+                  Budget
+                </th>
+                <th>
+                  Progress
+                </th>
+              </tr>
+
+
+            </thead>
+            <tbody>
+              <tr>
+                <td class="rt-header">
+                  <i class="material-icons text-secondary mr-3">info</i> American Express Payment API
+                </td>
+                <td class="rt-full">
+                  <i class="material-icons text-secondary" style="vertical-align:middle; line-height: 1">event</i>
+                    Jan 12 2018  <span class="text-secondary ml-1 d-none rt-table-inline">Due Date</span>
+                </td>
+
+                <td class="rt-full">
+                  <div class="text-secondary mb-2 d-none rt-table-block">
+                    Project Lead
+                  </div>
+                  <img alt="" class="img-thumb-xs mr-3 align-middle" src="http://via.placeholder.com/256x256">
+                  <a class="text-info"> Trisha Nimoy</a>
+                </td>
+                <td class="rt-full">
+                  <div class="text-secondary mb-2 d-none rt-table-block">
+                    Budget
+                  </div>
+                  $ 23,500
+                </td>
+                <td class="rt-full" style="width: 15rem">
+                  <div class="progress progress-thin">
+                    <div class="progress-bar bg-info" style="width:60%"></div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="rt-header">
+                  <i class="material-icons text-secondary mr-3">info</i> Western Job Portal
+                </td>
+                <td class="rt-full">
+                  <i class="material-icons text-secondary" style="vertical-align:middle; line-height: 1">event</i>
+                    Feb 28 2018  <span class="text-secondary ml-1 d-none rt-table-inline">Due Date</span>
+                </td>
+
+                <td class="rt-full">
+                  <div class="text-secondary mb-2 d-none rt-table-block">
+                    Project Lead
+                  </div>
+                  <img alt="" class="img-thumb-xs mr-3 align-middle" src="http://via.placeholder.com/256x256">
+                  <a class="text-info"> Sandy Rivers</a>
+                </td>
+                <td class="rt-full">
+                  <div class="text-secondary mb-2 d-none rt-table-block">
+                    Budget
+                  </div>
+                  $ 123,500
+                </td>
+                <td class="rt-full" style="width: 15rem">
+                  <div class="progress progress-thin">
+                    <div class="progress-bar bg-danger" style="width:10%"></div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="rt-header">
+                  <i class="material-icons text-secondary mr-3">info</i> SpaceShip Bridge UI
+                </td>
+                <td class="rt-full">
+                  <i class="material-icons text-secondary" style="vertical-align:middle; line-height: 1">event</i>
+                    Jan 31 2018  <span class="text-secondary ml-1 d-none rt-table-inline">Due Date</span>
+                </td>
+
+                <td class="rt-full">
+                  <div class="text-secondary mb-2 d-none rt-table-block">
+                    Project Lead
+                  </div>
+                  <img alt="" class="img-thumb-xs mr-3 align-middle" src="http://via.placeholder.com/256x256">
+                  <a class="text-info"> Peter Warsaw</a>
+                </td>
+                <td class="rt-full">
+                  <div class="text-secondary mb-2 d-none rt-table-block">
+                    Budget
+                  </div>
+                  $ 425,000
+                </td>
+                <td class="rt-full" style="width: 15rem">
+                  <div class="progress progress-thin">
+                    <div class="progress-bar bg-warning" style="width:40%"></div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="rt-header">
+                  <i class="material-icons text-secondary mr-3">info</i> Mobile Phone Payment App
+                </td>
+                <td class="rt-full">
+                  <i class="material-icons text-secondary" style="vertical-align:middle; line-height: 1">event</i>
+                    Dec 12 2017  <span class="text-secondary ml-1 d-none rt-table-inline">Due Date</span>
+                </td>
+
+                <td class="rt-full">
+                  <div class="text-secondary mb-2 d-none rt-table-block">
+                    Project Lead
+                  </div>
+                  <img alt="" class="img-thumb-xs mr-3 align-middle" src="http://via.placeholder.com/256x256">
+                  <a class="text-info"> Klaire Channing</a>
+                </td>
+                <td class="rt-full">
+                  <div class="text-secondary mb-2 d-none rt-table-block">
+                    Budget
+                  </div>
+                  $ 44,300
+                </td>
+                <td class="rt-full" style="width: 15rem">
+                  <div class="progress progress-thin">
+                    <div class="progress-bar bg-warning" style="width:20%"></div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="rt-header">
+                  <i class="material-icons text-secondary mr-3">info</i> Stars of  Galaxy Movie vfx
+                </td>
+                <td class="rt-full">
+                  <i class="material-icons text-secondary" style="vertical-align:middle; line-height: 1">event</i>
+                    March 29 2018  <span class="text-secondary ml-1 d-none rt-table-inline">Due Date</span>
+                </td>
+
+                <td class="rt-full">
+                  <div class="text-secondary mb-2 d-none rt-table-block">
+                    Project Lead
+                  </div>
+                  <img alt="" class="img-thumb-xs mr-3 align-middle" src="http://via.placeholder.com/256x256">
+                  <a class="text-info"> Kevin Lockhart</a>
+                </td>
+                <td class="rt-full">
+                  <div class="text-secondary mb-2 d-none rt-table-block">
+                    Budget
+                  </div>
+                  $ 650,000
+                </td>
+                <td class="rt-full" style="width: 15rem">
+                  <div class="progress progress-thin">
+                    <div class="progress-bar bg-success" style="width:70%"></div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="rt-header">
+                  <i class="material-icons text-secondary mr-3">info</i> Server API for Dmel
+                </td>
+                <td class="rt-full">
+                  <i class="material-icons text-secondary" style="vertical-align:middle; line-height: 1">event</i>
+                    Jan 4 2018  <span class="text-secondary ml-1 d-none rt-table-inline">Due Date</span>
+                </td>
+
+                <td class="rt-full">
+                  <div class="text-secondary mb-2 d-none rt-table-block">
+                    Project Lead
+                  </div>
+                  <img alt="" class="img-thumb-xs mr-3 align-middle" src="http://via.placeholder.com/256x256">
+                  <a class="text-info"> Trisha Nimoy</a>
+                </td>
+                <td class="rt-full">
+                  <div class="text-secondary mb-2 d-none rt-table-block">
+                    Budget
+                  </div>
+                  $ 423,500
+                </td>
+                <td class="rt-full" style="width: 15rem">
+                  <div class="progress progress-thin">
+                    <div class="progress-bar bg-info" style="width:50%"></div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="rt-header">
+                  <i class="material-icons text-secondary mr-3">info</i>Keller Cross Inc, Website
+                </td>
+                <td class="rt-full">
+                  <i class="material-icons text-secondary" style="vertical-align:middle; line-height: 1">event</i>
+                    Feb 11 2018  <span class="text-secondary ml-1 d-none rt-table-inline">Due Date</span>
+                </td>
+
+                <td class="rt-full">
+                  <div class="text-secondary mb-2 d-none rt-table-block">
+                    Project Lead
+                  </div>
+                  <img alt="" class="img-thumb-xs mr-3 align-middle" src="http://via.placeholder.com/256x256">
+                  <a class="text-info"> Ted Bear</a>
+                </td>
+                <td class="rt-full">
+                  <div class="text-secondary mb-2 d-none rt-table-block">
+                    Budget
+                  </div>
+                  $ 723,500
+                </td>
+                <td class="rt-full" style="width: 15rem">
+                  <div class="progress progress-thin">
+                    <div class="progress-bar bg-success" style="width:60%"></div>
+                  </div>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
     </div>
@@ -436,19 +722,24 @@
     </div>
   </div>
 </div>
+
   <script src="../vendor/jquery.min.js"></script>
   <script src="../vendor/popper.min.js"></script>
   <script src="../vendor/bootstrap.min.js"></script>
   <script src="../vendor/perfect-scrollbar.min.js"></script>
-  <script src="../vendor/hammer.min.js"></script>
-  <script src="../vendor/jquery-ui/jquery-ui.min.js"></script>
-  <script src="../scripts/sidebar.min.js"></script>
-  <script src="../scripts/collapsible-nav.min.js"></script>
-  <script src="../vendor/color/color.min.js"></script>
-  <script src="../scripts/colors.min.js"></script>
-  <script src="../scripts/settings.min.js"></script>
-  <script src="../scripts/card.min.js"></script>
-  <script src="../scripts/simplify.min.js"></script>
-  <script src="../scripts/adminJS/list_user.js"></script>
+  
+<script src="../vendor/hammer.min.js"></script>
+<script src="../vendor/jquery-ui/jquery-ui.min.js"></script>
+<script src="../scripts/sidebar.min.js"></script>
+<script src="../scripts/collapsible-nav.min.js"></script>
+<script src="../vendor/color/color.min.js"></script>
+<script src="../scripts/colors.min.js"></script>
+<script src="../scripts/settings.min.js"></script>
+<script src="../scripts/card.min.js"></script>
+<script src="../scripts/simplify.min.js"></script>
+  
+
+  
+
 </body>
 </html>
