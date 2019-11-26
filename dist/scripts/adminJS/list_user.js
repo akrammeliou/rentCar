@@ -1,5 +1,4 @@
 
-
 function editInactif(id) {
   var list = JSON.parse(localStorage.getItem('user'))
   console.log(id);
@@ -16,6 +15,7 @@ function editInactif(id) {
 
   list = JSON.stringify(list)
   localStorage.setItem("user", list);
+  window.location.reload();
 }
 function editActif(id) {
   var list = JSON.parse(localStorage.getItem('user'))
@@ -27,12 +27,13 @@ function editActif(id) {
       console.log(list[i].status == 'actif')
       console.log(list[i])
     }
-
+   
   }
   localStorage.setItem("user", JSON.stringify(list[i]));
 
   list = JSON.stringify(list)
   localStorage.setItem("user", list);
+  window.location.reload();
 }
 function afficheUser() {
   var user = JSON.parse(localStorage.getItem('user'))
@@ -50,7 +51,7 @@ function afficheUser() {
 
 
     html += `<tr>
-        <td id="name">  
+        <td id="name"> 
         ${list[i].username}              
         </td>
         <td id="email">
@@ -70,12 +71,14 @@ function afficheUser() {
     if (list[i].status == 'actif') {
       document.getElementById(`actif${list[i].id}`).style.cursor =  'not-allowed'
 
+
     }else {
 
       document.getElementById(`inactif${list[i].id}`).style.cursor =  'not-allowed'
     }
+      }
     
-  }
+
   // for (let i = 0; i < list.length; i++) {
   //   console.log('bach' +list[i].status);
   //   if (list[i].status=='actif'){
