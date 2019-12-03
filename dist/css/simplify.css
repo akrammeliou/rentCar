@@ -17288,3 +17288,6 @@ table#edittt {
 .btn-fab {
   width: 3.3rem !important;
 } */
+label.btn.btn-outline-primary {
+  display: inherit;
+}

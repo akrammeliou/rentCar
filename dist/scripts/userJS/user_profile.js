@@ -1,7 +1,4 @@
 function profile() {
-    let tabvoiture = JSON.parse(localStorage.getItem('voituer')) || [];
-    var connectedUser = JSON.parse(localStorage.getItem("connectedUser")) || [];
-
         let htmlprofile =`
         <img src="assets/images/icon-user.png" alt='' /> <span>Profile</span>
         `
@@ -53,7 +50,7 @@ cars.forEach(reservation => {
     tdResDebut.appendChild(textResDebut);
     tdResFin.appendChild(textResFin);
     
-    tr.appendChild(textidvoiture);
+    tr.appendChild(tdidvoiture);
     tr.appendChild(tdResDebut);
     tr.appendChild(tdResFin);
     

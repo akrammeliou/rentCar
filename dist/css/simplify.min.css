@@ -5,3 +5,6 @@
     z-index: 999;
     right: 35px;  
 }
+label.btn.btn-outline-primary {
+    display: inherit;
+}
