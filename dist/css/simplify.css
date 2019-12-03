@@ -17289,5 +17289,5 @@ table#edittt {
   width: 3.3rem !important;
 } */
 label.btn.btn-outline-primary {
-  display: inherit;
+  display: block !important;
 }

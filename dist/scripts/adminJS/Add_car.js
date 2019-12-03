@@ -97,23 +97,6 @@ function affichagevoitureAdmin() {
         console.log('bach voiture ' + tabvoiture[j].marquevoiture);
         html +=
           `<tr>
-<<<<<<< HEAD
-        <td id="name"> 
-        ${tabvoiture[j].matricule}              
-        </td>
-        <td id="marque">
-        <img src='../../assets/images/${tabvoiture[j].image}' class="img-thumb-sm mr-3">
-        ${tabvoiture[j].marquevoiture}
-          </td>
-          <td>${tabvoiture[j].modele}</td>
-        <td style="">
-          <div class="py-1 px-1">
-            <button class="btn btn-sm btn-flat-info btn-fab id="edit" onclick="ediiiit(${tabvoiture[j].id})" ><i class="material-icons">edit</i></button>
-            <button class="btn btn-sm btn-flat-secondary btn-fab id="delete" onclick="delete_cars(${tabvoiture[j].id})" ><i class="material-icons">delete</i></button>
-          </div>
-        </td>
-      </tr>`
-=======
             <td id="name">${tabvoiture[j].matricule}</td>
             <td>${tabvoiture[j].marquevoiture}</td>
             <td>${tabvoiture[j].modele}</td>
@@ -127,7 +110,6 @@ function affichagevoitureAdmin() {
               </div>
             </td>
           </tr>`
->>>>>>> 5c592e168fd5c0f4bdb74300b23ef3d86e86e39b
       }
     }
   }
@@ -159,30 +141,13 @@ function ediiiit(id) {
   }
   let htmledit = `<table id="edittt">
       <tr>
-<<<<<<< HEAD
-      <td>
-      <div class="imagePreview">
-      <img id="output_image"/>
-      </div>     
-      <label class="btn btn-outline-primary"> Upload
-      <input id='carImg' type="file" accept="image/*" onchange="preview_image(event)" class="uploadFile img" value="Upload Photo"
-      style="width: 0px;height: 0px;overflow: hidden;">
-      </label>
-    
-      </td>
-      <td>
-      </td>
-        <td><input type="texte" class="form-control" id="matricule_edit" value="${tabvoiture[index].matricule}"></td>
-        <td><input type="texte" class="form-control" id="mark_edit" value="${tabvoiture[index].marquevoiture}"> 
-         <td><input type="texte" class="form-control" id="modele_edit" value="${tabvoiture[index].modele}"></td>
-          <td>
-          <input type="button" class="btn btn-primary" value="Edit" id="ediiit" onclick="modif(${tabvoiture[index].id})">
-=======
         <td>
+        <div class="imagePreview">
+        <img id="output_image"/>
+        </div>
           <label class="btn btn-outline-primary"> Upload
             <input id='carImg' type="file" accept="image/*" onchange="preview_image(event)" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;">
           </label>
->>>>>>> 5c592e168fd5c0f4bdb74300b23ef3d86e86e39b
         </td>
         <td><input type="texte" class="form-control" id="matricule_edit" value="${tabvoiture[index].matricule}"></td>
         <td><input type="texte" class="form-control" id="mark_edit" value="${tabvoiture[index].marquevoiture}"></td>
@@ -202,11 +167,7 @@ function modif(id) {
     matricule: document.getElementById('matricule_edit').value,
     marquevoiture: document.getElementById('mark_edit').value,
     modele: document.getElementById('modele_edit').value,
-<<<<<<< HEAD
-    image: document.getElementById('carImg').files[0].name,
-=======
     image: document.getElementById('carImg').files[0].name
->>>>>>> 5c592e168fd5c0f4bdb74300b23ef3d86e86e39b
     // image: document.getElementById('image_edit')
   }
   for (let i = 0; i < tabvoiture.length; i++) {
@@ -229,9 +190,5 @@ function preview_image(event) {
     output.src = reader.result;
   }
   reader.readAsDataURL(event.target.files[0]);
-<<<<<<< HEAD
-}
-=======
 }
 // <!-- <img src='../../assets/images/${tabvoiture[index].image}' id="image_edit" class="img-thumb-sm mr-3"></td> -->
->>>>>>> 5c592e168fd5c0f4bdb74300b23ef3d86e86e39b
