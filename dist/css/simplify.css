@@ -17226,7 +17226,7 @@ box-shadow:0px -3px 6px 2px rgba(0,0,0,0.2);
 display:block;
 border-radius:0px;
 box-shadow:0px 4px 6px 2px rgba(0,0,0,0.2);
-margin-top:-5px;
+width: 100%;
 }
 .imgUp
 {
@@ -17266,3 +17266,25 @@ font-size:15px;
 .btn-outline-primary{
   width: 100%;
 }
+#editform td {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 15px;
+}
+table#edittt {
+  margin: 0 auto;
+}
+#editform .imagePreview {
+ width: 100%; 
+ height: 140px;
+}
+/* #editform input#ediiit {
+  width: 100% !important; 
+}
+.btn {
+  width: auto;
+}
+.btn-fab {
+  width: 3.3rem !important;
+} */
