@@ -17266,3 +17266,6 @@ font-size:15px;
 .btn-outline-primary{
   width: 100%;
 }
+label.btn.btn-outline-primary {
+  display: inherit;
+}

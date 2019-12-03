@@ -15331,4 +15331,20 @@ input, select {
   #user_profile {
     border-left: none;
   }
+  #r-gallery-parta ul li {
+    height: 265px; 
+  }
+  #r-gallery-parta li img {
+    height: 265px;
+    width: 100%;
+    object-fit: cover;
+  }
+  .userrrr table {
+    margin: 0 auto;
+  }
+  .userrrr th, .userrrr td {
+    width: 33%;
+    text-align:center;
+  }
+
 /*# sourceMappingURL=main.css.map */
